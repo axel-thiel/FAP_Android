@@ -18,7 +18,7 @@ public class userHomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_home);
         TextView userNameTextView = (TextView) findViewById(R.id.userNameTextView);
-        userNameTextView.setText("Toto tata");
+        userNameTextView.setText("Tintin Milou");
 
         FicheActivity fiche1 = new FicheActivity("Ponney aquatique", "troyes", "Tintin", R.drawable.tintin
                                                 ,"Lundi", "Mardi", false, false, "commentaire 1", "Niveau1");
