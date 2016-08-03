@@ -35,7 +35,7 @@ public class FicheUserAdapter extends ArrayAdapter {
         textViewSport.setText(listeActivite.get(position).getSport());
         textViewVille.setText(listeActivite.get(position).getVille());
         textViewPseudo.setText(listeActivite.get(position).getPseudo());
-        imageUser.setImageResource(R.drawable.tintin);
+        imageUser.setImageResource(listeActivite.get(position).getImage());
 
 
         return convertView;

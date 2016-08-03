@@ -2,12 +2,13 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by maax on 02/08/16.
  */
-public class FicheActivity {
+public class FicheActivity implements Serializable {
     private String sport;
     private String ville;
     private String pseudo;

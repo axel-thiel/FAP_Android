@@ -80,7 +80,7 @@
 
         <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
                     android:orientation="horizontal"
                     >
                     <TextView
@@ -134,9 +134,10 @@
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="80dp">
 
     <TextView
+        android:id="@+id/detail_text_view_commentaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
@@ -155,6 +156,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:orientation="vertical"
         >
 
         <TextView

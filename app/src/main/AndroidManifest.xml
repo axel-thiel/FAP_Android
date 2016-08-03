@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".userHomeActivity"/>
+        <activity android:name=".FicheDetailAndResultlActivity"/>
 
     </application>
 
