@@ -1,5 +1,8 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
+import android.content.Intent;
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,9 +10,26 @@ import java.util.List;
  * Created by maax on 04/08/16.
  */
 public class DataBaseUserPlug {
-    public static List<FicheActivity> createDataBaseUserPlug(){
 
-        // bréation d'une base de donné avec 3 utilisateurs
+    public static List<FicheActivity> listeComplete;
+
+
+
+    public static List<FicheActivity> recuperationFichesUtilisateur(String userLogin){
+        List<FicheActivity> listeFichesTriee = new ArrayList<>();
+
+        for (FicheActivity ficheUser: listeComplete) {
+            if(ficheUser.getPseudo().equals(userLogin)){
+               listeFichesTriee.add(ficheUser);
+            }
+        }
+
+       return listeFichesTriee;
+    }
+
+    public static void créerListeComplete(){
+
+        // création d'une base de donné avec 3 utilisateurs
 
         FicheActivity fiche1 = new FicheActivity("Footing", "Lyon", "Damien", R.drawable.damien
                 ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
@@ -38,23 +58,22 @@ public class DataBaseUserPlug {
         FicheActivity fiche12 = new FicheActivity("Judo", "Toulouse", "Mélanie", R.drawable.melanie
                 ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
 
-        List<FicheActivity> listeFiches = new ArrayList<>();
-        listeFiches.add(fiche1);
-        listeFiches.add(fiche2);
-        listeFiches.add(fiche3);
-        listeFiches.add(fiche4);
-        listeFiches.add(fiche5);
-        listeFiches.add(fiche6);
-        listeFiches.add(fiche7);
-        listeFiches.add(fiche8);
-        listeFiches.add(fiche9);
-        listeFiches.add(fiche10);
-        listeFiches.add(fiche11);
-        listeFiches.add(fiche12);
+        listeComplete = new ArrayList<>();
+        listeComplete.add(fiche1);
+        listeComplete.add(fiche2);
+        listeComplete.add(fiche3);
+        listeComplete.add(fiche4);
+        listeComplete.add(fiche5);
+        listeComplete.add(fiche6);
+        listeComplete.add(fiche7);
+        listeComplete.add(fiche8);
+        listeComplete.add(fiche9);
+        listeComplete.add(fiche10);
+        listeComplete.add(fiche11);
+        listeComplete.add(fiche12);
 
 
-        return listeFiches;
-    }
+       }
 
 
 }

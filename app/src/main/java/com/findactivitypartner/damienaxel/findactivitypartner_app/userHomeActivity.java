@@ -20,26 +20,27 @@ public class userHomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_home);
-        TextView userNameTextView = (TextView) findViewById(R.id.userNameTextView);
-        userNameTextView.setText("Tintin Milou");
 
-        List<FicheActivity> listeFiches = DataBaseUserPlug.createDataBaseUserPlug();
-
+        Bundle bundle = getIntent().getExtras();
+        String userLogin = bundle.getString("userLoginString");
+        List<FicheActivity> listeFichesTriee = DataBaseUserPlug.recuperationFichesUtilisateur(userLogin);
         final ListView listeUserFiches = (ListView) findViewById(R.id.liste_fiches_user);
-        FicheUserAdapter ficheUserAdapter= new FicheUserAdapter(this, R.layout.adapter_fiche_user,listeFiches);
-        listeUserFiches.setAdapter(ficheUserAdapter);
 
+        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, listeFichesTriee);
+        listeUserFiches.setAdapter(ficheUserAdapter);
         listeUserFiches.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(view.getContext(),FicheDetailAndResultlActivity.class);
+                Intent intent = new Intent(view.getContext(), FicheDetailAndResultlActivity.class);
                 FicheActivity ficheUserchoisie = (FicheActivity) listeUserFiches.getItemAtPosition(i);
                 intent.putExtra("ficheUserChoisie", ficheUserchoisie);
                 startActivity(intent);
             }
 
         });
+
+
 
     }
 
