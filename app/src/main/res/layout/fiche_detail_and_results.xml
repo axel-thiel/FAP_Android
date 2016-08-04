@@ -12,7 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Résultats ..."
-            android:textSize="18dp"
+            android:textSize="20dp"
+            android:gravity="center"
             />
     </LinearLayout>
 
@@ -20,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/colorAccent"
+        android:background="@drawable/bordure_layout"
         >
 
             <LinearLayout
@@ -38,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:paddingEnd="10dp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -50,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:paddingEnd="10dp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -61,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:paddingEnd="10dp"
+                    android:textStyle="bold"
                     />
 
                 <ImageView
@@ -93,6 +97,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:paddingEnd="10dp"
+                        android:textStyle="bold"
                         />
 
                     <TextView
@@ -105,6 +110,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:paddingEnd="10dp"
+                        android:textStyle="bold"
                         />
 
                     <TextView
@@ -116,6 +122,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:paddingEnd="10dp"
+                        android:textStyle="bold"
                         />
 
                     <TextView
@@ -128,6 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:paddingEnd="10dp"
+                        android:textStyle="bold"
                         />
 
         </LinearLayout>
@@ -140,6 +148,7 @@
         android:id="@+id/detail_text_view_commentaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textSize="18dp"
         android:text="Commentaires ..."
         />
@@ -155,7 +164,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:orientation="vertical"
         >
 
