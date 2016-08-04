@@ -167,16 +167,10 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Debut de la liste"
-            android:textSize="666dp"
-            />
         <ListView
+            android:id="@+id/list_view_associatedCards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             >
 
 

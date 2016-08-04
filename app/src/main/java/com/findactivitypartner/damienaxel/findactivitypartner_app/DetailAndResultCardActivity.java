@@ -3,17 +3,20 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * Created by maax on 03/08/16.
  */
-public class FicheDetailAndResultlActivity extends Activity {
+public class DetailAndResultCardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fiche_detail_and_results);
+        setContentView(R.layout.card_detail_and_results);
         TextView textViewSport = (TextView) findViewById(R.id.detail_text_view_sport);
         TextView textViewVille = (TextView) findViewById(R.id.detail_text_view_ville);
         TextView textViewPseudo = (TextView) findViewById(R.id.detail_text_view_pseudo);
@@ -23,23 +26,21 @@ public class FicheDetailAndResultlActivity extends Activity {
         TextView textViewPret = (TextView) findViewById(R.id.detail_text_view_pretbesoin);
         TextView textViewCommentaire = (TextView) findViewById(R.id.detail_text_view_commentaire);
         ImageView imageView = (ImageView) findViewById(R.id.detail_image_user_fiche);
-
-
+        ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
         Bundle bundle = getIntent().getExtras();
-        FicheActivity ficheUserChoisie = (FicheActivity) bundle.get("ficheUserChoisie");
-        textViewSport.setText(ficheUserChoisie.getSport());
-        textViewVille.setText(ficheUserChoisie.getVille());
-        textViewPseudo.setText(ficheUserChoisie.getPseudo());
-        textViewDateIn.setText(ficheUserChoisie.getDateDebut());
-        textViewDateOut.setText(ficheUserChoisie.getDateFin());
-        textViewNiveau.setText(ficheUserChoisie.getNiveauActivite());
-        textViewCommentaire.setText(ficheUserChoisie.getComentaireActivite());
-        imageView.setImageResource(ficheUserChoisie.getImage());
+        ActivityCard UserCardChoose = (ActivityCard) bundle.get("ficheUserChoisie");
+        textViewSport.setText(UserCardChoose.getSport());
+        textViewVille.setText(UserCardChoose.getVille());
+        textViewPseudo.setText(UserCardChoose.getPseudo());
+        textViewDateIn.setText(UserCardChoose.getDateDebut());
+        textViewDateOut.setText(UserCardChoose.getDateFin());
+        textViewNiveau.setText(UserCardChoose.getNiveauActivite());
+        textViewCommentaire.setText(UserCardChoose.getComentaireActivite());
+        imageView.setImageResource(UserCardChoose.getImage());
+        List<ActivityCard> associatedCards = DataBaseUserCard.createListOfAssociatedCard(UserCardChoose);
 
-
-
-
-
+        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, associatedCards);
+        listAssociatedCard.setAdapter(ficheUserAdapter);
     }
 }

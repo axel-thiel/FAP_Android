@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by maax on 02/08/16.
  */
-public class FicheActivity implements Serializable {
+public class ActivityCard implements Serializable {
     private String sport;
     private String ville;
     private String pseudo;
@@ -20,13 +20,13 @@ public class FicheActivity implements Serializable {
     private String comentaireActivite;
     private String niveauActivite;
 
-    public FicheActivity() {
+    public ActivityCard() {
 
     }
 
-    public FicheActivity(String sport, String ville, String pseudo, int image, String dateDebut,
-                         String dateFin , boolean pretMateriel, boolean besoinMateriel,
-                         String comentaireActivite , String niveauActivite ) {
+    public ActivityCard(String sport, String ville, String pseudo, int image, String dateDebut,
+                        String dateFin , boolean pretMateriel, boolean besoinMateriel,
+                        String comentaireActivite , String niveauActivite ) {
         this.sport = sport;
         this.ville = ville;
         this.pseudo = pseudo;

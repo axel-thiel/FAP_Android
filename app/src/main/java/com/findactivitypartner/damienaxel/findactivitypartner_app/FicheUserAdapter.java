@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class FicheUserAdapter extends ArrayAdapter {
 
-    private FicheActivity ficheActivity;
-    private  List<FicheActivity> listeActivite;
+    private ActivityCard ficheActivity;
+    private  List<ActivityCard> listeActivite;
 
-    public FicheUserAdapter(Context context, int resource, List<FicheActivity> liste) {
+    public FicheUserAdapter(Context context, int resource, List<ActivityCard> liste) {
         super(context, resource, liste);
         listeActivite = liste;
     }
