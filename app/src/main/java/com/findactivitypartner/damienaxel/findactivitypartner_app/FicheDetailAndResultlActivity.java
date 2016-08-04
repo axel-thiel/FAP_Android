@@ -2,6 +2,7 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -21,6 +22,7 @@ public class FicheDetailAndResultlActivity extends Activity {
         TextView textViewNiveau = (TextView) findViewById(R.id.detail_text_view_niveau);
         TextView textViewPret = (TextView) findViewById(R.id.detail_text_view_pretbesoin);
         TextView textViewCommentaire = (TextView) findViewById(R.id.detail_text_view_commentaire);
+        ImageView imageView = (ImageView) findViewById(R.id.detail_image_user_fiche);
 
 
 
@@ -33,6 +35,7 @@ public class FicheDetailAndResultlActivity extends Activity {
         textViewDateOut.setText(ficheUserChoisie.getDateFin());
         textViewNiveau.setText(ficheUserChoisie.getNiveauActivite());
         textViewCommentaire.setText(ficheUserChoisie.getComentaireActivite());
+        imageView.setImageResource(ficheUserChoisie.getImage());
 
 
 

@@ -11,31 +11,31 @@ public class DataBaseUserPlug {
 
         // bréation d'une base de donné avec 3 utilisateurs
 
-        FicheActivity fiche1 = new FicheActivity("Footing", "Lyon", "Damien", R.drawable.tintin
+        FicheActivity fiche1 = new FicheActivity("Footing", "Lyon", "Damien", R.drawable.damien
                 ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        FicheActivity fiche2 = new FicheActivity("Footing", "Bordeau", "Damien", R.drawable.tintin
+        FicheActivity fiche2 = new FicheActivity("Footing", "Bordeau", "Damien", R.drawable.damien
                 ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        FicheActivity fiche3 = new FicheActivity("Foot", "Lyon", "Damien", R.drawable.tintin
+        FicheActivity fiche3 = new FicheActivity("Foot", "Lyon", "Damien", R.drawable.damien
                 ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        FicheActivity fiche4 = new FicheActivity("Footing", "Toulouse", "Damien", R.drawable.tintin
+        FicheActivity fiche4 = new FicheActivity("Footing", "Toulouse", "Damien", R.drawable.damien
                 ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
 
-        FicheActivity fiche5 = new FicheActivity("Footing", "Lyon", "Axel", R.drawable.tintin
+        FicheActivity fiche5 = new FicheActivity("Footing", "Lyon", "Axel", R.drawable.axel
                 ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        FicheActivity fiche6 = new FicheActivity("Footing", "Troyes", "Axel", R.drawable.tintin
+        FicheActivity fiche6 = new FicheActivity("Footing", "Troyes", "Axel", R.drawable.axel
                 ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        FicheActivity fiche7 = new FicheActivity("Foot", "Lyon", "Axel", R.drawable.tintin
+        FicheActivity fiche7 = new FicheActivity("Foot", "Lyon", "Axel", R.drawable.axel
                 ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        FicheActivity fiche8 = new FicheActivity("Judo", "Toulouse", "Axel", R.drawable.tintin
+        FicheActivity fiche8 = new FicheActivity("Judo", "Toulouse", "Axel", R.drawable.axel
                 ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
 
-        FicheActivity fiche9 = new FicheActivity("Footing", "Lyon", "Mélanie", R.drawable.tintin
+        FicheActivity fiche9 = new FicheActivity("Footing", "Lyon", "Mélanie", R.drawable.melanie
                 ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        FicheActivity fiche10 = new FicheActivity("Footing", "Dijon", "Mélanie", R.drawable.tintin
+        FicheActivity fiche10 = new FicheActivity("Footing", "Dijon", "Mélanie", R.drawable.melanie
                 ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        FicheActivity fiche11 = new FicheActivity("Foot", "Lyon", "Mélanie", R.drawable.tintin
+        FicheActivity fiche11 = new FicheActivity("Foot", "Lyon", "Mélanie", R.drawable.melanie
                 ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        FicheActivity fiche12 = new FicheActivity("Judo", "Toulouse", "Mélanie", R.drawable.tintin
+        FicheActivity fiche12 = new FicheActivity("Judo", "Toulouse", "Mélanie", R.drawable.melanie
                 ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
 
         List<FicheActivity> listeFiches = new ArrayList<>();

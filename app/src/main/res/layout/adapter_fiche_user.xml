@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bordure_layout"
+    >
 
         <TextView
 
@@ -13,6 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:paddingEnd="10dp"
+            android:textStyle="bold"
             />
 
          <TextView
@@ -25,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
              android:paddingEnd="10dp"
+             android:textStyle="bold"
             />
 
         <TextView
@@ -36,17 +40,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:paddingEnd="10dp"
+            android:textStyle="bold"
             />
 
         <ImageView
             android:id="@+id/image_user_fiche"
-            android:layout_gravity="center"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="2"
+
 
             />
 
 
 
 </LinearLayout>
+
