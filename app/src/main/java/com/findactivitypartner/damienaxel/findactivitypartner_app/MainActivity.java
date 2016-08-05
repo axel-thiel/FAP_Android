@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     EditText userLogin;
     String userLoginString;
-    UserBDD userBDD = new UserBDD(this);
+    UserBDD userBDD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DataBaseUserCard.createFullList();
         userLogin = (EditText) findViewById(R.id.edit_text_login);
+        userBDD = new UserBDD(this);
     }
 
 
@@ -42,9 +43,15 @@ public class MainActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             do{
                 Log.d("test",
-                        cursor.getInt(cursor.getColumnIndex("Login"))+""
+                        cursor.getString( cursor.getColumnIndex("Login"))+""
                         );
             }while (cursor.moveToNext());
         }cursor.close();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        userBDD.close();
     }
 }

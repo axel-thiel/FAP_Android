@@ -21,6 +21,7 @@ public class UserBDD {
 
     public UserBDD(Context context) {
         myBaseSqlite = new MyBaseSqlite(context, "user_table",null,1);
+        this.open();
     }
 
     public void open(){
@@ -32,6 +33,9 @@ public class UserBDD {
     }
 
     public Cursor getUserList(){
+        if (sqLiteDatabase == null) {
+
+        }
         return sqLiteDatabase.rawQuery(" SELECT * FROM "+TABLE_USER, null);
     }
 
