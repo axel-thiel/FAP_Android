@@ -21,19 +21,21 @@ public class userHomeActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
         String userLogin = bundle.getString("userLoginString");
-        List<ActivityCard> listeFichesTriee = DataBaseUserCard.recuperationUserPlug(userLogin);
-        final ListView listeUserFiches = (ListView) findViewById(R.id.liste_fiches_user);
+        List<ActivityCard> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
+        final ListView UserCardsList = (ListView) findViewById(R.id.user_card_list);
 
+        // use custum adapter to show the list
+        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, sortedCardsList);
+        UserCardsList.setAdapter(ficheUserAdapter);
 
-        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, listeFichesTriee);
-        listeUserFiches.setAdapter(ficheUserAdapter);
-        listeUserFiches.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //method to isolate the information on clicked card
+        UserCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
-                ActivityCard ficheUserchoisie = (ActivityCard) listeUserFiches.getItemAtPosition(i);
-                intent.putExtra("ficheUserChoisie", ficheUserchoisie);
+                ActivityCard choosedUserCard = (ActivityCard) UserCardsList.getItemAtPosition(i);
+                intent.putExtra("choosedUserCard", choosedUserCard);
                 startActivity(intent);
             }
 

@@ -18,6 +18,9 @@
         <activity android:name=".userHomeActivity"/>
         <activity android:name=".DetailAndResultCardActivity"/>
 
+
+
+
     </application>
 
 </manifest>

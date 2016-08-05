@@ -29,7 +29,7 @@ public class DetailAndResultCardActivity extends Activity {
         ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
         Bundle bundle = getIntent().getExtras();
-        ActivityCard UserCardChoose = (ActivityCard) bundle.get("ficheUserChoisie");
+        ActivityCard UserCardChoose = (ActivityCard) bundle.get("choosedUserCard");
         textViewSport.setText(UserCardChoose.getSport());
         textViewVille.setText(UserCardChoose.getVille());
         textViewPseudo.setText(UserCardChoose.getPseudo());

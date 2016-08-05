@@ -10,7 +10,7 @@ public class DataBaseUserCard {
 
     public static List<ActivityCard> fullList;
 
-    public static List<ActivityCard> recuperationUserPlug(String userLogin){
+    public static List<ActivityCard> recuperationUserCard(String userLogin){
         List<ActivityCard> listeFichesTriee = new ArrayList<>();
 
         for (ActivityCard ficheUser: fullList) {
