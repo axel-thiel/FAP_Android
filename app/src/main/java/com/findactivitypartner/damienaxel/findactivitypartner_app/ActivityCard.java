@@ -9,6 +9,7 @@ import java.util.Date;
  * Created by maax on 02/08/16.
  */
 public class ActivityCard implements Serializable {
+    private User user;
     private String sport;
     private String ville;
     private String pseudo;

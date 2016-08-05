@@ -4,15 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+
    >
+    <Button
+        android:id="@+id/button_create_new_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New profile"
+        android:onClick="onCreateNewUser"
+        android:layout_marginBottom="100dp"
+        android:layout_gravity="right"
+        />
 
     <EditText
         android:id="@+id/edit_text_login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/bordure_layout_simple"
+        android:layout_gravity="center"
         />
 
 
@@ -22,7 +33,20 @@
         android:layout_height="wrap_content"
         android:text="Sign in"
         android:onClick="onHomeUser"
+        android:layout_gravity="center"
         />
+
+    <Button
+        android:id="@+id/button_all_BDD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="all users"
+        android:onClick="onBDDAccess"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="end"
+        />
+
+
 
 
 </LinearLayout>

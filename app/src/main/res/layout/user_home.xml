@@ -9,8 +9,9 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:textSize="@dimen/Titre1"
-        android:text="Mes Recherches"
+        android:text="PROFILE"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         />
 
     <ListView

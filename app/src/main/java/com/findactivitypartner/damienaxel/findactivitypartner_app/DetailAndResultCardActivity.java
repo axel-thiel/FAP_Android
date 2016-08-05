@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class DetailAndResultCardActivity extends Activity {
 
+    UserBDD userBDD = new UserBDD(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
