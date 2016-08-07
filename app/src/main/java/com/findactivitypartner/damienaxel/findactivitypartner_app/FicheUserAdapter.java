@@ -34,7 +34,7 @@ public class FicheUserAdapter extends ArrayAdapter {
 
         textViewSport.setText(listeActivite.get(position).getSport());
         textViewVille.setText(listeActivite.get(position).getVille());
-        textViewPseudo.setText(listeActivite.get(position).getPseudo());
+        textViewPseudo.setText(listeActivite.get(position).getLogin());
         imageUser.setImageResource(listeActivite.get(position).getImage());
 
 

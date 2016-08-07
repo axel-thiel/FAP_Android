@@ -14,7 +14,7 @@ public class DataBaseUserCard {
         List<ActivityCard> listeFichesTriee = new ArrayList<>();
 
         for (ActivityCard ficheUser: fullList) {
-            if(ficheUser.getPseudo().equals(userLogin)){
+            if(ficheUser.getLogin().equals(userLogin)){
                listeFichesTriee.add(ficheUser);
             }
         }
@@ -71,7 +71,7 @@ public class DataBaseUserCard {
     public static List<ActivityCard> createListOfAssociatedCard(ActivityCard activityCard){
         List<ActivityCard> associatedCardList = new ArrayList<ActivityCard>();
         for (ActivityCard activityCards: fullList) {
-            if ((!activityCard.getPseudo().equals(activityCards.getPseudo())) &&
+            if ((!activityCard.getLogin().equals(activityCards.getLogin())) &&
                     activityCard.getSport().equals(activityCards.getSport()) &&
                     activityCard.getVille().equals(activityCards.getVille())){
                 associatedCardList.add(activityCards);

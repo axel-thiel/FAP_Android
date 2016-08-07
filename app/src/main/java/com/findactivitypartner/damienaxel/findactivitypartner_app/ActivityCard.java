@@ -1,18 +1,15 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
-import android.media.Image;
-
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by maax on 02/08/16.
  */
 public class ActivityCard implements Serializable {
-    private User user;
+//    private User user;
     private String sport;
     private String ville;
-    private String pseudo;
+    private String login;
     private int image;
     private String dateDebut;
     private String dateFin;
@@ -25,12 +22,13 @@ public class ActivityCard implements Serializable {
 
     }
 
-    public ActivityCard(String sport, String ville, String pseudo, int image, String dateDebut,
+
+    public ActivityCard(String sport, String ville, String login, int image, String dateDebut,
                         String dateFin , boolean pretMateriel, boolean besoinMateriel,
                         String comentaireActivite , String niveauActivite ) {
         this.sport = sport;
         this.ville = ville;
-        this.pseudo = pseudo;
+        this.login = login;
         this.image = image;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
@@ -73,12 +71,12 @@ public class ActivityCard implements Serializable {
         this.ville = ville;
     }
 
-    public String getPseudo() {
-        return pseudo;
+    public String getLogin() {
+        return login;
     }
 
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public int getImage() {

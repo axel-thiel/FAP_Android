@@ -5,13 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.util.List;
-
 /**
  * Created by maax on 05/08/16.
  */
 public class UserBDD {
-    private MyBaseSqlite myBaseSqlite;
+    private SqliteBddUserProfiles myBaseSqlite;
     private static final String COL_ID = "user_id";
     private static final String TABLE_USER = "User_table";
     private static final String LOGIN = "Login";
@@ -20,7 +18,7 @@ public class UserBDD {
     private SQLiteDatabase sqLiteDatabase;
 
     public UserBDD(Context context) {
-        myBaseSqlite = new MyBaseSqlite(context, "user_table",null,1);
+        myBaseSqlite = new SqliteBddUserProfiles(context, "user_table",null,1);
         this.open();
     }
 
@@ -47,11 +45,11 @@ public class UserBDD {
         sqLiteDatabase.insert(TABLE_USER,null,contentValues);
     }
 
-    public MyBaseSqlite getMyBaseSqlite() {
+    public SqliteBddUserProfiles getMyBaseSqlite() {
         return myBaseSqlite;
     }
 
-    public void setMyBaseSqlite(MyBaseSqlite myBaseSqlite) {
+    public void setMyBaseSqlite(SqliteBddUserProfiles myBaseSqlite) {
         this.myBaseSqlite = myBaseSqlite;
     }
 

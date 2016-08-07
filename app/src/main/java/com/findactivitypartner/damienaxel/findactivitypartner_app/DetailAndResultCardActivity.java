@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class DetailAndResultCardActivity extends Activity {
 
-    UserBDD userBDD = new UserBDD(this);
+//    UserBDD userBDD = new UserBDD(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,14 @@ public class DetailAndResultCardActivity extends Activity {
         ActivityCard UserCardChoose = (ActivityCard) bundle.get("choosedUserCard");
         textViewSport.setText(UserCardChoose.getSport());
         textViewVille.setText(UserCardChoose.getVille());
-        textViewPseudo.setText(UserCardChoose.getPseudo());
+        textViewPseudo.setText(UserCardChoose.getLogin());
         textViewDateIn.setText(UserCardChoose.getDateDebut());
         textViewDateOut.setText(UserCardChoose.getDateFin());
         textViewNiveau.setText(UserCardChoose.getNiveauActivite());
         textViewCommentaire.setText(UserCardChoose.getComentaireActivite());
         imageView.setImageResource(UserCardChoose.getImage());
+
+        // method to find the associates cards in the fake database
         List<ActivityCard> associatedCards = DataBaseUserCard.createListOfAssociatedCard(UserCardChoose);
 
         FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, associatedCards);

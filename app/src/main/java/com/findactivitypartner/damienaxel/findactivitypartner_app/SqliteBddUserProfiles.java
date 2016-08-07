@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by maax on 05/08/16.
  */
-public class MyBaseSqlite extends SQLiteOpenHelper {
+public class SqliteBddUserProfiles extends SQLiteOpenHelper {
     private static final String COL_ID = "user_id";
     private static final String TABLE_USER = "User_table";
     private static final String LOGIN = "Login";
@@ -19,7 +19,7 @@ public class MyBaseSqlite extends SQLiteOpenHelper {
             COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + LOGIN + " TEXT NOT NULL, "
             + PASSWORD + " TEXT NOT NULL, " + EMAIL + " TEXT NOT NULL ); ";
 
-    public MyBaseSqlite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public SqliteBddUserProfiles(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, DATABASE_VERSION);
     }
 

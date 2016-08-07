@@ -22,6 +22,14 @@
 
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nouvelle Recherche"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:onClick="onCreateNewResearch"
+        />
 
 
 </LinearLayout>
