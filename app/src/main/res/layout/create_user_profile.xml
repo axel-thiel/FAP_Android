@@ -39,7 +39,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="20dp"
         android:onClick="onCreateUser"
-        android:text="Submit"
+        android:text="Ok"
         />
 
 </LinearLayout>

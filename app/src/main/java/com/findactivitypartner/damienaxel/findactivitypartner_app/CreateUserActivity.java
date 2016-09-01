@@ -11,11 +11,11 @@ import android.widget.TextView;
  */
 public class CreateUserActivity extends Activity {
 
-    TextView textViewLogin;
-    TextView textViewPassword;
-    TextView textViewEmail;
-    TextView textViewEmailConfirm;
-    UserBDD userBDD;
+    private TextView textViewLogin;
+    private TextView textViewPassword;
+    private TextView textViewEmail;
+    private TextView textViewEmailConfirm;
+    private UserBDD userBDD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

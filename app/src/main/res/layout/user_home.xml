@@ -9,7 +9,7 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:textSize="@dimen/Titre1"
-        android:text="PROFILE"
+        android:text="Your cards"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         />
@@ -25,10 +25,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nouvelle Recherche"
+        android:text="New card"
         android:layout_gravity="end"
         android:layout_marginTop="20dp"
-        android:onClick="onCreateNewResearch"
+        android:onClick="onCreateNewCard"
         />
 
 

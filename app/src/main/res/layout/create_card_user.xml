@@ -7,36 +7,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="login"
+        android:id="@+id/new_card_login"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:id="@+id/new_card_email"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="sport"
+        android:id="@+id/new_card_sport"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ville"
+        android:hint="city"
+        android:id="@+id/new_card_city"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="level"
+        android:id="@+id/new_card_level"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date de début"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date de fin"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Niveau"
+        android:hint="comment"
+        android:id="@+id/new_card_comment"
         />
 
     <Button
@@ -46,7 +53,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="20dp"
         android:onClick="onCreateResearchCard"
-        android:text="Submit"
+        android:text="Ok"
         />
 
 </LinearLayout>

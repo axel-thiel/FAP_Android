@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by maax on 05/08/16.
  */
 public class SqliteBddUserProfiles extends SQLiteOpenHelper {
-    private static final String COL_ID = "user_id";
-    private static final String TABLE_USER = "User_table";
-    private static final String LOGIN = "Login";
-    private static final String PASSWORD = "Password";
-    private static final String EMAIL = "Email";
-    private static final int DATABASE_VERSION = 1;
+    static final String COL_ID = "user_id";
+    static final String TABLE_USER = "User_table";
+    static final String LOGIN = "Login";
+    static final String PASSWORD = "Password";
+    static final String EMAIL = "Email";
+    static final int DATABASE_VERSION = 1;
 
     private static final String createBDD = " CREATE TABLE " + TABLE_USER + " ( " +
             COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + LOGIN + " TEXT NOT NULL, "

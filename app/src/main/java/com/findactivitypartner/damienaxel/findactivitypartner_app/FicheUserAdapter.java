@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,10 +14,10 @@ import java.util.List;
  */
 public class FicheUserAdapter extends ArrayAdapter {
 
-    private ActivityCard ficheActivity;
-    private  List<ActivityCard> listeActivite;
 
-    public FicheUserAdapter(Context context, int resource, List<ActivityCard> liste) {
+    private  List<Card> listeActivite;
+
+    public FicheUserAdapter(Context context, int resource, List<Card> liste) {
         super(context, resource, liste);
         listeActivite = liste;
     }
@@ -29,13 +28,14 @@ public class FicheUserAdapter extends ArrayAdapter {
         TextView textViewSport = (TextView) convertView.findViewById(R.id.text_view_sport);
         TextView textViewVille = (TextView) convertView.findViewById(R.id.text_view_ville);
         TextView textViewPseudo = (TextView) convertView.findViewById(R.id.text_view_pseudo);
-        ImageView imageUser = (ImageView) convertView.findViewById(R.id.image_user_fiche);
 
 
-        textViewSport.setText(listeActivite.get(position).getSport());
-        textViewVille.setText(listeActivite.get(position).getVille());
+
+        textViewSport.setText(listeActivite.get(position).getActivity());
+        textViewVille.setText(listeActivite.get(position).getCity());
         textViewPseudo.setText(listeActivite.get(position).getLogin());
-        imageUser.setImageResource(listeActivite.get(position).getImage());
+
+
 
 
         return convertView;

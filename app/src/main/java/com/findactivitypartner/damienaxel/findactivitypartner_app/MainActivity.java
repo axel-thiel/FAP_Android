@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         DataBaseUserCard.createFullList();
         userLogin = (EditText) findViewById(R.id.edit_text_login);
         userBDD = new UserBDD(this);
+
     }
 
 
@@ -40,18 +41,27 @@ public class MainActivity extends AppCompatActivity {
     public void onBDDAccess(View view) {
         Cursor cursor = userBDD.getUserList();
         
-        if (cursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do{
-                Log.d("test",
-                        cursor.getString( cursor.getColumnIndex("Login"))+""
+                Log.d(" Login =",
+                        cursor.getString( cursor.getColumnIndex("Login"))+
+                                ", Password =" +cursor.getString( cursor.getColumnIndex("Password"))+
+                                ", Email =" +cursor.getString( cursor.getColumnIndex("Email")) +""
                         );
             }while (cursor.moveToNext());
-        }cursor.close();
+            cursor.close();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         userBDD.close();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        userBDD.open();
     }
 }

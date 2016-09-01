@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,37 +30,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <TextView
 
-                    android:layout_gravity="center"
-                    android:id="@+id/detail_text_view_sport"
-                    android:hint="Sport"
-                    android:textSize="18dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:paddingEnd="10dp"
-                    android:textStyle="bold"
-                    />
 
                 <TextView
-
-                    android:layout_gravity="center"
-                    android:id="@+id/detail_text_view_ville"
-                    android:hint="Ville"
-                    android:textSize="18dp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:paddingEnd="10dp"
-                    android:textStyle="bold"
-                    />
-
-                <TextView
-                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:id="@+id/detail_text_view_pseudo"
                     android:hint="Pseudo"
-                    android:textSize="18dp"
+                    android:textSize="20dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -67,14 +44,7 @@
                     android:textStyle="bold"
                     />
 
-                <ImageView
-                    android:id="@+id/detail_image_user_fiche"
-                    android:layout_gravity="center"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_weight="3"
 
-                    />
 
             </LinearLayout>
 
@@ -87,56 +57,63 @@
                     android:layout_height="80dp"
                     android:orientation="horizontal"
                     >
-                    <TextView
 
-                        android:layout_gravity="center"
-                        android:id="@+id/detail_text_view_dateIn"
-                        android:hint="dateIn"
-                        android:textSize="18dp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:paddingEnd="10dp"
-                        android:textStyle="bold"
-                        />
+            <TextView
 
-                    <TextView
+                android:layout_gravity="center"
+                android:id="@+id/detail_text_view_sport"
+                android:hint="Sport"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingEnd="10dp"
 
-                        android:layout_gravity="center"
-                        android:id="@+id/detail_text_view_dateOut"
-                        android:hint="dateOut"
-                        android:textSize="18dp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:paddingEnd="10dp"
-                        android:textStyle="bold"
-                        />
+                />
+
+            <TextView
+
+                android:layout_gravity="center"
+                android:id="@+id/detail_text_view_ville"
+                android:hint="City"
+                android:textSize="18dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingEnd="10dp"
+
+                />
 
                     <TextView
                         android:layout_gravity="center"
                         android:id="@+id/detail_text_view_niveau"
-                        android:hint="niveau"
+                        android:hint="level"
                         android:textSize="18dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:paddingEnd="10dp"
-                        android:textStyle="bold"
+
                         />
 
-                    <TextView
 
-                        android:layout_gravity="center"
-                        android:id="@+id/detail_text_view_pretbesoin"
-                        android:hint="pretbesoin"
-                        android:textSize="18dp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:paddingEnd="10dp"
-                        android:textStyle="bold"
-                        />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/detail_text_view_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="18dp"
+                android:hint = "email"
+                android:textStyle="italic"
+
+                />
 
         </LinearLayout>
 
@@ -145,13 +122,14 @@
     android:layout_height="80dp">
 
     <TextView
-        android:id="@+id/detail_text_view_commentaire"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:text="Commentaires ..."
-        />
+    android:id="@+id/detail_text_view_commentaire"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:textSize="18dp"
+    android:hint = "Commentaires ..."
+    android:textStyle="italic"
+    />
 
 </LinearLayout>
 

@@ -17,6 +17,7 @@ public class userHomeActivity extends Activity {
 
     String userLogin = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,8 @@ public class userHomeActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
 
-        List<ActivityCard> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
+
+        List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
         final ListView UserCardsList = (ListView) findViewById(R.id.user_card_list);
 
         // use custum adapter to show the list
@@ -37,7 +39,7 @@ public class userHomeActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
-                ActivityCard choosedUserCard = (ActivityCard) UserCardsList.getItemAtPosition(i);
+                Card choosedUserCard = (Card) UserCardsList.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 startActivity(intent);
             }
@@ -47,9 +49,9 @@ public class userHomeActivity extends Activity {
 
     }
 
-    public void onCreateNewResearch(View view){
+    public void onCreateNewCard(View view){
 
-        Intent intent = new Intent(this, CreateResearchCardActivity.class);
+        Intent intent = new Intent(this, CreateNewCardActivity.class);
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
 

@@ -8,12 +8,12 @@ import java.util.List;
  */
 public class DataBaseUserCard {
 
-    public static List<ActivityCard> fullList;
+    public static List<Card> fullList;
 
-    public static List<ActivityCard> recuperationUserCard(String userLogin){
-        List<ActivityCard> listeFichesTriee = new ArrayList<>();
+    public static List<Card> recuperationUserCard(String userLogin){
+        List<Card> listeFichesTriee = new ArrayList<>();
 
-        for (ActivityCard ficheUser: fullList) {
+        for (Card ficheUser: fullList) {
             if(ficheUser.getLogin().equals(userLogin)){
                listeFichesTriee.add(ficheUser);
             }
@@ -26,32 +26,20 @@ public class DataBaseUserCard {
 
         // création d'une base de donné avec 3 utilisateurs
 
-        ActivityCard fiche1 = new ActivityCard("Footing", "Lyon", "Damien", R.drawable.damien
-                ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        ActivityCard fiche2 = new ActivityCard("Footing", "Bordeau", "Damien", R.drawable.damien
-                ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        ActivityCard fiche3 = new ActivityCard("Foot", "Lyon", "Damien", R.drawable.damien
-                ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        ActivityCard fiche4 = new ActivityCard("Footing", "Toulouse", "Damien", R.drawable.damien
-                ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
+        Card fiche1 = new Card("Footing", "Lyon", "Damien", "Niveau1","mail", "comment");
+        Card fiche2 = new Card("Footing", "Bordeau", "Damien",  "Niveau1","mail", "comment");
+        Card fiche3 = new Card("Foot", "Lyon", "Damien", "Niveau1","mail", "comment");
+        Card fiche4 = new Card("Footing", "Toulouse", "Damien", "Niveau1","mail", "comment");
 
-        ActivityCard fiche5 = new ActivityCard("Footing", "Lyon", "Axel", R.drawable.axel
-                ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        ActivityCard fiche6 = new ActivityCard("Footing", "Troyes", "Axel", R.drawable.axel
-                ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        ActivityCard fiche7 = new ActivityCard("Foot", "Lyon", "Axel", R.drawable.axel
-                ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        ActivityCard fiche8 = new ActivityCard("Judo", "Toulouse", "Axel", R.drawable.axel
-                ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
+        Card fiche5 = new Card("Footing", "Lyon", "Axel", "Niveau1","mail", "comment");
+        Card fiche6 = new Card("Footing", "Troyes", "Axel",  "Niveau1","mail", "comment");
+        Card fiche7 = new Card("Foot", "Lyon", "Axel",  "Niveau1","mail", "comment");
+        Card fiche8 = new Card("Judo", "Toulouse", "Axel", "Niveau1","mail", "comment");
 
-        ActivityCard fiche9 = new ActivityCard("Footing", "Lyon", "Mélanie", R.drawable.melanie
-                ,"Dimanche", "Mardi", false, false, "commentaire", "Niveau1");
-        ActivityCard fiche10 = new ActivityCard("Footing", "Dijon", "Mélanie", R.drawable.melanie
-                ,"jeudi", "Mardi", true, false, "commentaire 2", "Niveau1");
-        ActivityCard fiche11 = new ActivityCard("Foot", "Lyon", "Mélanie", R.drawable.melanie
-                ,"mercredi", "Mardi", true, false, "commentaire 3", "Niveau1");
-        ActivityCard fiche12 = new ActivityCard("Judo", "Toulouse", "Mélanie", R.drawable.melanie
-                ,"lundi ", "lundi", false, false, "très aimable", "Niveau1");
+        Card fiche9 = new Card("Footing", "Lyon", "Mélanie", "Niveau1","mail", "comment");
+        Card fiche10 = new Card("Footing", "Dijon", "Mélanie", "Niveau1","mail", "comment");
+        Card fiche11 = new Card("Foot", "Lyon", "Mélanie", "Niveau1","mail", "comment");
+        Card fiche12 = new Card("Judo", "Toulouse", "Mélanie", "Niveau1","mail", "comment");
 
         fullList = new ArrayList<>();
         fullList.add(fiche1);
@@ -68,13 +56,13 @@ public class DataBaseUserCard {
         fullList.add(fiche12);
     }
 
-    public static List<ActivityCard> createListOfAssociatedCard(ActivityCard activityCard){
-        List<ActivityCard> associatedCardList = new ArrayList<ActivityCard>();
-        for (ActivityCard activityCards: fullList) {
-            if ((!activityCard.getLogin().equals(activityCards.getLogin())) &&
-                    activityCard.getSport().equals(activityCards.getSport()) &&
-                    activityCard.getVille().equals(activityCards.getVille())){
-                associatedCardList.add(activityCards);
+    public static List<Card> createListOfAssociatedCard(Card card){
+        List<Card> associatedCardList = new ArrayList<Card>();
+        for (Card cards : fullList) {
+            if ((!card.getLogin().equals(cards.getLogin())) &&
+                    card.getActivity().equals(cards.getActivity()) &&
+                    card.getCity().equals(cards.getCity())){
+                associatedCardList.add(cards);
             }
         }
         return associatedCardList;
