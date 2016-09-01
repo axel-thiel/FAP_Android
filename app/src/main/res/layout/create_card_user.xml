@@ -20,8 +20,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="sport"
-        android:id="@+id/new_card_sport"
+        android:hint="activity"
+        android:id="@+id/new_card_activity"
         />
 
     <EditText

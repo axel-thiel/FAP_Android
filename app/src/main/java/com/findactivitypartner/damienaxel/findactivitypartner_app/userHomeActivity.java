@@ -50,7 +50,8 @@ public class userHomeActivity extends Activity {
     }
 
     public void onCreateNewCard(View view){
-
+        Bundle bundle = getIntent().getExtras();
+        userLogin = bundle.getString("userLoginString");
         Intent intent = new Intent(this, CreateNewCardActivity.class);
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
