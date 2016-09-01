@@ -14,15 +14,15 @@ import java.util.List;
  */
 public class userHomeActivity extends Activity {
 
-    Bundle bundle = getIntent().getExtras();
-    String userLogin = bundle.getString("userLoginString");
+
+    String userLogin = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_home);
-
-
+        Bundle bundle = getIntent().getExtras();
+        userLogin = bundle.getString("userLoginString");
 
         List<ActivityCard> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
         final ListView UserCardsList = (ListView) findViewById(R.id.user_card_list);
