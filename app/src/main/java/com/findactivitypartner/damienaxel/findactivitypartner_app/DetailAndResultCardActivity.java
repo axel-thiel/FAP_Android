@@ -15,12 +15,14 @@ import java.util.List;
  * Created by maax on 03/08/16.
  */
 public class DetailAndResultCardActivity extends Activity {
-
+    String userLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_detail_and_results);
+        Bundle bundle = getIntent().getExtras();
+        userLogin = bundle.getString("userLoginString");
 
         TextView textViewSport = (TextView) findViewById(R.id.detail_text_view_sport);
         TextView textViewVille = (TextView) findViewById(R.id.detail_text_view_ville);
@@ -31,7 +33,6 @@ public class DetailAndResultCardActivity extends Activity {
 
         final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
-        Bundle bundle = getIntent().getExtras();
         Card UserCardChoose = (Card) bundle.get("choosedUserCard");
         textViewSport.setText(UserCardChoose.getActivity());
         textViewVille.setText(UserCardChoose.getCity());
@@ -85,5 +86,16 @@ public class DetailAndResultCardActivity extends Activity {
 
         });
 
+    }
+
+    public void onDisconnect(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void onHomeUser(View view) {
+        Intent intent = new Intent(this, userHomeActivity.class);
+        intent.putExtra("userLoginString",userLogin);
+        startActivity(intent);
     }
 }

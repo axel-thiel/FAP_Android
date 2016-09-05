@@ -58,9 +58,12 @@ public class userHomeActivity extends Activity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
                 Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
                 Card choosedUserCard = (Card) UserCardsList.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
+                intent.putExtra("userLoginString", userLogin);
                 startActivity(intent);
             }
 
@@ -78,4 +81,9 @@ public class userHomeActivity extends Activity {
 
     }
 
+    public void onDisconnect(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        cardBDD.close();
+        startActivity(intent);
+    }
 }

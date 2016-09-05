@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:background="@drawable/multisport">
 
     <TextView
         android:id="@+id/userNameTextView"
-        android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:gravity="left"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/Titre1"
+        android:textSize="30dp"
         android:text="Vos recherches d'activités :"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:background="#FFFFFF"
+
         />
 
     <ListView
@@ -25,10 +28,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New card"
+        android:text="Nouvelle recherche"
         android:layout_gravity="end"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:onClick="onCreateNewCard"
+        android:background="@drawable/button_layout"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déconnexion"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:onClick="onDisconnect"
+        android:background="@drawable/button_layout"
         />
 
 

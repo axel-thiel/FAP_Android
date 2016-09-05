@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/multisport"
+    >
 
 
     <LinearLayout
@@ -10,11 +12,15 @@
 
         >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Résultats ..."
-            android:textSize="20dp"
-            android:gravity="center"
+            android:textSize="30dp"
+            android:gravity="left"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="#FFFFFF"
             />
     </LinearLayout>
 
@@ -23,6 +29,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/bordure_layout"
+        android:layout_marginBottom="20dp"
         >
 
             <LinearLayout
@@ -42,6 +49,7 @@
                     android:layout_weight="2"
                     android:paddingEnd="10dp"
                     android:textStyle="bold"
+
                     />
 
 
@@ -146,6 +154,7 @@
             android:id="@+id/list_view_associatedCards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             >
         </ListView>
 
@@ -153,6 +162,25 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste de vos recherches"
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"
+        android:onClick="onHomeUser"
+        android:background="@drawable/button_layout"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déconnexion"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:onClick="onDisconnect"
+        android:background="@drawable/button_layout"
+        />
 
 
 </LinearLayout>
