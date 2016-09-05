@@ -12,7 +12,7 @@
         <TextView
             android:gravity="center"
             android:id="@+id/text_view_pseudo"
-            android:hint="Pseudo"
+            android:hint="Identifiant"
             android:textSize="20dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
 
             android:layout_gravity="center"
             android:id="@+id/text_view_sport"
-            android:hint="Sport"
+            android:hint="Activité"
             android:textSize="20dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
 
             android:layout_gravity="center"
             android:id="@+id/text_view_ville"
-            android:hint="City"
+            android:hint="Ville"
             android:textSize="20dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
 
             android:layout_gravity="center"
             android:id="@+id/text_view_level"
-            android:hint="level"
+            android:hint="Niveau"
             android:textSize="20dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

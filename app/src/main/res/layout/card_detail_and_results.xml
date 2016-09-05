@@ -35,7 +35,7 @@
                 <TextView
                     android:gravity="center"
                     android:id="@+id/detail_text_view_pseudo"
-                    android:hint="Pseudo"
+                    android:hint="Identifiant"
                     android:textSize="20dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
                 android:layout_gravity="center"
                 android:id="@+id/detail_text_view_sport"
-                android:hint="Sport"
+                android:hint="Activité"
                 android:textSize="18dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
 
                 android:layout_gravity="center"
                 android:id="@+id/detail_text_view_ville"
-                android:hint="City"
+                android:hint="Ville"
                 android:textSize="18dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -86,8 +86,8 @@
 
                     <TextView
                         android:layout_gravity="center"
-                        android:id="@+id/detail_text_view_niveau"
-                        android:hint="level"
+                        android:id="@+id/detail_text_view_level"
+                        android:hint="Niveau"
                         android:textSize="18dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -122,12 +122,12 @@
     android:layout_height="80dp">
 
     <TextView
-    android:id="@+id/detail_text_view_commentaire"
+    android:id="@+id/detail_text_view_comment"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:textSize="18dp"
-    android:hint = "Commentaires ..."
+    android:hint = "Aucun commentaire"
     android:textStyle="italic"
     />
 

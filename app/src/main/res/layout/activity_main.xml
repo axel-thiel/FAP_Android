@@ -10,28 +10,40 @@
         android:id="@+id/button_create_new_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New profile"
+        android:text="Nouvel utilisateur"
         android:onClick="onCreateNewUser"
         android:layout_marginBottom="100dp"
         android:layout_gravity="right"
         />
 
     <EditText
+        android:inputType="text"
+        android:hint="Identifiant"
         android:id="@+id/edit_text_login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:background="@drawable/bordure_layout_simple"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:hint="mot de passe"
+        android:inputType="textPassword"
+        android:id="@+id/edit_text_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/bordure_layout_simple"
         android:layout_gravity="center"
         />
 
-
     <Button
         android:id="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in"
+        android:text="Connexion"
         android:onClick="onHomeUser"
         android:layout_gravity="center"
         />
@@ -40,7 +52,7 @@
         android:id="@+id/button_all_BDD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="all users (log)"
+        android:text="liste des utilisateurs (log)"
         android:onClick="onBDDAccess"
         android:layout_marginTop="50dp"
         android:layout_gravity="end"
@@ -50,7 +62,7 @@
         android:id="@+id/button_all_BDDcard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="all cards (log)"
+        android:text="liste des recherches (log)"
         android:onClick="onBDDCardsAccess"
 
         android:layout_gravity="end"

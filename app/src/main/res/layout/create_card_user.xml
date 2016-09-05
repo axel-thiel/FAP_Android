@@ -6,7 +6,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="login"
+        android:hint="Identifiant"
         android:id="@+id/new_card_login"
         />
 
@@ -20,14 +20,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="activity"
+        android:hint="Activité"
         android:id="@+id/new_card_activity"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="city"
+        android:hint="Ville"
         android:id="@+id/new_card_city"
         />
 
@@ -35,14 +35,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="level"
+        android:hint="Niveau"
         android:id="@+id/new_card_level"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="comment"
+        android:hint="Comentaire"
         android:id="@+id/new_card_comment"
         />
 

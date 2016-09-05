@@ -7,7 +7,7 @@
         android:id="@+id/create_new_userlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="login"
+        android:hint="Identifiant"
         />
 
     <EditText
@@ -15,7 +15,7 @@
         android:id="@+id/create_new_userpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="password"
+        android:hint="Mot de passe"
         />
 
     <EditText
@@ -29,7 +29,7 @@
         android:id="@+id/create_confirm_new_useremail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="confirm your email"
+        android:hint="confirmation email"
         />
 
     <Button
