@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class CreateNewCardActivity extends Activity {
 
     private String userLogin;
+    private String userMail;
     private CardBDD cardBdd;
     private TextView textViewLogin;
     private TextView textViewMail;
@@ -25,6 +26,7 @@ public class CreateNewCardActivity extends Activity {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
+        userMail = bundle.getString("userMailString");
 
         setContentView(R.layout.create_card_user);
         textViewLogin = (TextView) findViewById(R.id.new_card_login);
@@ -35,6 +37,7 @@ public class CreateNewCardActivity extends Activity {
         textViewComment = (TextView) findViewById(R.id.new_card_comment);
 
         textViewLogin.setText(userLogin);
+        textViewMail.setText(userMail);
 
     }
 
@@ -45,7 +48,7 @@ public class CreateNewCardActivity extends Activity {
                 textViewCity.getText().toString(),
                 userLogin,
                 textViewLevel.getText().toString(),
-                textViewMail.getText().toString(),
+                userMail,
                 textViewComment.getText().toString());
 
         cardBdd = new CardBDD(this);

@@ -49,7 +49,7 @@ public class DetailAndResultCardActivity extends Activity {
         //method to fond associated cards in the sqlite bdd
         CardBDD cardBDD = new CardBDD(this);
         Cursor cursor = cardBDD.getCardList();
-        String userLogin = UserCardChoose.getLogin();
+
         String activitySearched = UserCardChoose.getActivity();
         String citySearched = UserCardChoose.getCity();
 
@@ -81,6 +81,7 @@ public class DetailAndResultCardActivity extends Activity {
                 Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
                 Card choosedUserCard = (Card) listAssociatedCard.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
+                intent.putExtra("userLoginString", userLogin);
                 startActivity(intent);
             }
 

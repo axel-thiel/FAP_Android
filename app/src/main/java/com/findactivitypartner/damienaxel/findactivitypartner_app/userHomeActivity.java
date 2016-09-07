@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import java.util.List;
 
@@ -19,6 +19,7 @@ public class userHomeActivity extends Activity {
 
     String userLogin = null;
     CardBDD cardBDD;
+
 
 
     @Override
@@ -73,10 +74,12 @@ public class userHomeActivity extends Activity {
     }
 
     public void onCreateNewCard(View view){
-        Bundle bundle = getIntent().getExtras();
-        userLogin = bundle.getString("userLoginString");
+        UserBDD userBDD = new UserBDD(this);
+        String userMail = new ReadSqliteUserBdd(userBDD, userLogin).getUserProfil().getMail();
+
         Intent intent = new Intent(this, CreateNewCardActivity.class);
         intent.putExtra("userLoginString", userLogin);
+        intent.putExtra("userMailString",userMail);
         startActivity(intent);
 
     }

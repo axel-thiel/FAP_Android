@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/multisport"
+    android:background="@drawable/multisport_redim"
 
 
    >
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Nouvel utilisateur"
         android:onClick="onCreateNewUser"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:layout_gravity="right"
         android:background="@drawable/button_layout"
         android:layout_marginTop="10dp"
@@ -29,7 +29,7 @@
         android:id="@+id/edit_text_login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/bordure_layout_simple"
         android:layout_gravity="center"
         />

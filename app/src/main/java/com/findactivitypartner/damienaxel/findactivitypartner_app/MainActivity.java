@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                             "You are succesfully logged in.",
                             Toast.LENGTH_LONG).show();
 
-
                     Intent intent = new Intent(this, userHomeActivity.class);
                     intent.putExtra("userLoginString", userLoginString);
                     startActivity(intent);
@@ -64,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(this, "Incorrect password",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
                     break;
                 }
             }

@@ -14,6 +14,10 @@ public class Card implements Serializable {
     private String mail;
     private String comment;
 
+    public Card(){
+
+    }
+
     public Card(String activity, String city, String login,
                 String level, String mail, String comment) {
 
