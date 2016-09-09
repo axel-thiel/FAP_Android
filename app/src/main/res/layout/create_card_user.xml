@@ -1,84 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="@drawable/multisport_redim" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:text="Nouvelle recherche ..."
-        android:textSize="30dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:background="#FFFFFF"
-        />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <EditText
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Identifiant"
-        android:id="@+id/new_card_login"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        android:layout_height="match_parent"
+        android:background="@drawable/multisport_redim"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="email"
-        android:id="@+id/new_card_email"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF"
+            android:text="Nouvelle recherche ..."
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="30dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Activité"
-        android:id="@+id/new_card_activity"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        <EditText
+            android:id="@+id/new_card_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Identifiant" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ville"
-        android:id="@+id/new_card_city"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        <EditText
+            android:id="@+id/new_card_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="email" />
+
+        <EditText
+            android:id="@+id/new_card_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Activité" />
+
+        <EditText
+            android:id="@+id/new_card_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Ville" />
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Niveau"
-        android:id="@+id/new_card_level"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        <EditText
+            android:id="@+id/new_card_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Niveau" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Comentaire"
-        android:id="@+id/new_card_comment"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordure_layout_simple"
-        />
+        <EditText
+            android:id="@+id/new_card_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Comentaire" />
 
-    <Button
-        android:id="@id/button_create_new_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="30dp"
-        android:onClick="onCreateResearchCard"
-        android:text="Ok"
-        android:background="@drawable/button_layout"
+        <Button
+            android:id="@id/button_create_new_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_layout"
+            android:onClick="onCreateResearchCard"
+            android:text="Ok"
 
-        />
+            />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
