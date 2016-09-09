@@ -1,14 +1,16 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     EditText userLogin;
     String userLoginString;
     UserBDD userBDD;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBDDAccess(View view) {
         Cursor cursor = userBDD.getUserList();
-        
+
         if (cursor != null && cursor.moveToFirst()) {
             do{
                 Log.d(" UserBdd / Login =",

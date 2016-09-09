@@ -40,4 +40,19 @@ public class UserBDD {
         sqLiteDatabase.insert(SqliteBddUserProfiles.TABLE_USER,null,contentValues);
     }
 
+    public SqliteBddUserProfiles getMyBaseSqlite() {
+        return myBaseSqlite;
+    }
+
+    public void setMyBaseSqlite(SqliteBddUserProfiles myBaseSqlite) {
+        this.myBaseSqlite = myBaseSqlite;
+    }
+
+    public SQLiteDatabase getSqLiteDatabase() {
+        return sqLiteDatabase;
+    }
+
+    public void setSqLiteDatabase(SQLiteDatabase sqLiteDatabase) {
+        this.sqLiteDatabase = sqLiteDatabase;
+    }
 }

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Find Activity Partner</string>
+    <string-array name="activity_array">
+        <item>Foot</item>
+        <item>Footing</item>
+        <item>Tennis</item>
+        <item>Lutte</item>
+        <item>Boxe</item>
+        <item>Velo</item>
+        <item>Ping Pong</item>
+        <item>Rugby</item>
+        <item>Judo</item>
+        <item>Marche</item>
+    </string-array>
 </resources>

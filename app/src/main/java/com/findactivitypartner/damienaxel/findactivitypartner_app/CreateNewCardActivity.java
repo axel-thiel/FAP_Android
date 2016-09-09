@@ -2,8 +2,13 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 /**
@@ -19,6 +24,7 @@ public class CreateNewCardActivity extends Activity {
     private TextView textViewCity;
     private TextView textViewLevel;
     private TextView textViewComment;
+    private Spinner spinnerActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +39,16 @@ public class CreateNewCardActivity extends Activity {
         textViewCity = (TextView) findViewById(R.id.new_card_city);
         textViewLevel = (TextView) findViewById(R.id.new_card_level);
         textViewComment = (TextView) findViewById(R.id.new_card_comment);
-
+        spinnerActivity = (Spinner) findViewById(R.id.spinner_activity);
         textViewLogin.setText(userLogin);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.activity_array, android.R.layout.simple_spinner_item);
+    // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    // Apply the adapter to the spinner
+        spinnerActivity.setAdapter(adapter);
 
-    }
-
-
+        }
     public void onCreateResearchCard(View view) {
 
         Card newCard = new Card(textViewActivity.getText().toString(),

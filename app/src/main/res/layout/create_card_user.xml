@@ -17,6 +17,13 @@
         android:id="@+id/new_card_email"
         />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_activity"
+
+        ></Spinner>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
