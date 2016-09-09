@@ -27,6 +27,7 @@ public class UserBDD {
 
     public Cursor getUserList(){
         if (sqLiteDatabase != null) {
+
             return sqLiteDatabase.rawQuery(" SELECT * FROM "+SqliteBddUserProfiles.TABLE_USER, null);
         }
        return null;
