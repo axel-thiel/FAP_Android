@@ -16,9 +16,9 @@
         android:layout_marginTop="30sp"
         android:layout_marginBottom="30sp"
         android:text="Nouvelle recherche ..."
-        android:textSize="30sp"
         android:textColor="@android:color/holo_blue_dark"
         android:background="#FFFFFF"
+        android:textSize="@dimen/Titre1"
         />
 
     <EditText
@@ -28,6 +28,7 @@
         android:id="@+id/new_card_login"
         android:layout_marginTop="20sp"
         android:background="@drawable/bordure_layout_simple"
+        android:textSize="@dimen/Titre2"
         />
 
     <EditText
@@ -37,6 +38,7 @@
         android:id="@+id/new_card_email"
         android:layout_marginTop="10sp"
         android:background="@drawable/bordure_layout_simple"
+        android:textSize="@dimen/Titre2"
         />
 
     <Spinner
@@ -45,17 +47,9 @@
         android:id="@+id/spinner_activity"
         android:layout_marginTop="10sp"
         android:background="@drawable/bordure_layout_simple"
-
+        android:textSize="@dimen/Titre2"
         ></Spinner>
 
-    <!--<EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Activité"
-        android:id="@+id/new_card_activity"
-        android:layout_marginTop="10sp"
-        android:background="@drawable/bordure_layout_simple"
-        />-->
 
     <Spinner
         android:layout_width="match_parent"
@@ -63,19 +57,13 @@
         android:id="@+id/spinner_city"
         android:layout_marginTop="10sp"
         android:background="@drawable/bordure_layout_simple"
-
+        android:textSize="@dimen/Titre2"
         ></Spinner>
 
-    <!--<EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ville"
-        android:id="@+id/new_card_city"
-        android:layout_marginTop="10sp"
-        android:background="@drawable/bordure_layout_simple"
-        />-->
+
 
     <Spinner
+        android:textSize="@dimen/Titre2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_level"
@@ -84,16 +72,8 @@
 
         ></Spinner>
 
-    <!--<EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Niveau"
-        android:id="@+id/new_card_level"
-        android:layout_marginTop="10sp"
-        android:background="@drawable/bordure_layout_simple"
-        />-->
-
     <EditText
+        android:textSize="@dimen/Titre2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Comentaire"
@@ -103,6 +83,7 @@
         />
 
     <Button
+        android:textSize="@dimen/Titre2"
         android:id="@id/button_create_new_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

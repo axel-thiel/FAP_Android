@@ -17,7 +17,7 @@
             android:background="#FFFFFF"
             android:text="Nouvel utilisateur ..."
             android:textColor="@android:color/holo_blue_dark"
-            android:textSize="30sp"
+            android:textSize="@dimen/Titre1"
 
             />
 
@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
-            android:hint="Identifiant" />
+            android:hint="Identifiant"
+            android:textSize="@dimen/Titre2"/>
 
         <EditText
             android:id="@+id/create_new_userpassword"
@@ -36,7 +37,8 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="Mot de passe"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textSize="@dimen/Titre2"/>
 
         <EditText
             android:id="@+id/create_new_useremail"
@@ -44,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
-            android:hint="email" />
+            android:hint="email"
+            android:textSize="@dimen/Titre2"
+            />
 
         <EditText
             android:id="@+id/create_confirm_new_useremail"
@@ -52,7 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
-            android:hint="confirmation email" />
+            android:hint="confirmation email"
+            android:textSize="@dimen/Titre2"
+            />
 
         <Button
             android:id="@id/button_create_new_user"
@@ -62,7 +68,9 @@
             android:layout_marginTop="30sp"
             android:background="@drawable/button_layout"
             android:onClick="onCreateUser"
-            android:text="Ok" />
+            android:text="Ok"
+            android:textSize="@dimen/Titre2"
+            />
 
     </LinearLayout>
 </ScrollView>
