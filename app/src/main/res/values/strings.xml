@@ -12,4 +12,20 @@
         <item>Judo</item>
         <item>Marche</item>
     </string-array>
+    <string-array name="city_array">
+        <item>Dijon</item>
+        <item>Lyon</item>
+        <item>Paris</item>
+        <item>Toulouse</item>
+        <item>Bordeaux</item>
+        <item>New york</item>
+        <item>Blaison-le-vaseux</item>
+    </string-array>
+    <string-array name="level_array">
+        <item>Nul</item>
+        <item>Bon</item>
+        <item>Expert</item>
+        <item>Juste pour rire</item>
+        <item>Dangereux</item>
+    </string-array>
 </resources>

@@ -36,36 +36,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_activity"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bordure_layout_simple"
 
         ></Spinner>
 
-    <EditText
+    <!--<EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Activité"
         android:id="@+id/new_card_activity"
         android:layout_marginTop="10dp"
         android:background="@drawable/bordure_layout_simple"
-        />
+        />-->
 
-    <EditText
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_city"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bordure_layout_simple"
+
+        ></Spinner>
+
+    <!--<EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ville"
         android:id="@+id/new_card_city"
         android:layout_marginTop="10dp"
         android:background="@drawable/bordure_layout_simple"
-        />
+        />-->
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_level"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bordure_layout_simple"
 
-    <EditText
+        ></Spinner>
+
+    <!--<EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Niveau"
         android:id="@+id/new_card_level"
         android:layout_marginTop="10dp"
         android:background="@drawable/bordure_layout_simple"
-        />
+        />-->
 
     <EditText
         android:layout_width="match_parent"
