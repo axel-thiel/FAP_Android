@@ -7,18 +7,17 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/multisport_redim"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30sp"
+            android:layout_marginTop="30sp"
             android:background="#FFFFFF"
             android:text="Nouvel utilisateur ..."
             android:textColor="@android:color/holo_blue_dark"
-            android:textSize="30dp"
+            android:textSize="30sp"
 
             />
 
@@ -26,7 +25,7 @@
             android:id="@+id/create_new_userlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="Identifiant" />
 
@@ -34,7 +33,7 @@
             android:id="@+id/create_new_userpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="Mot de passe"
             android:inputType="textPassword" />
@@ -43,7 +42,7 @@
             android:id="@+id/create_new_useremail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="email" />
 
@@ -51,7 +50,7 @@
             android:id="@+id/create_confirm_new_useremail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="confirmation email" />
 
@@ -60,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="30sp"
             android:background="@drawable/button_layout"
             android:onClick="onCreateUser"
             android:text="Ok" />

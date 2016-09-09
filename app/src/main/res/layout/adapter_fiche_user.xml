@@ -19,11 +19,11 @@
             android:gravity="center"
             android:id="@+id/text_view_pseudo"
             android:hint="Identifiant"
-            android:textSize="20dp"
-            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingEnd="5dp"
+            android:paddingEnd="5sp"
             android:textStyle="bold"
 
             />
@@ -39,11 +39,11 @@
             android:layout_gravity="center"
             android:id="@+id/text_view_sport"
             android:hint="Activité"
-            android:textSize="20dp"
-            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingEnd="5dp"
+            android:paddingEnd="5sp"
 
             />
 
@@ -52,11 +52,11 @@
             android:layout_gravity="center"
             android:id="@+id/text_view_ville"
             android:hint="Ville"
-            android:textSize="20dp"
-            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingEnd="5dp"
+            android:paddingEnd="5sp"
 
             />
 
@@ -65,11 +65,11 @@
             android:layout_gravity="center"
             android:id="@+id/text_view_level"
             android:hint="Niveau"
-            android:textSize="20dp"
-            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:paddingEnd="5dp"
+            android:paddingEnd="5sp"
 
             />
 
@@ -80,7 +80,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="5sp"
         >
 
 
