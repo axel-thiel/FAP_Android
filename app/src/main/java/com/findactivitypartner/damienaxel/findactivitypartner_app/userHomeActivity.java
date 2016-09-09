@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 
 
 import java.util.List;
@@ -19,6 +23,7 @@ public class userHomeActivity extends Activity {
 
     String userLogin = null;
     CardBDD cardBDD;
+    ScrollView scrollView;
 
 
 
@@ -29,6 +34,8 @@ public class userHomeActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
         cardBDD = new CardBDD(this);
+        scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
+
 
 
         List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
@@ -48,21 +55,22 @@ public class userHomeActivity extends Activity {
         }
 
 
-        final ListView UserCardsList = (ListView) findViewById(R.id.user_card_list);
+        final ListView userCardsList = (ListView) findViewById(R.id.user_card_list);
 
         // use custum adapter to show the list
         FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, sortedCardsList);
-        UserCardsList.setAdapter(ficheUserAdapter);
+        userCardsList.setAdapter(ficheUserAdapter);
+        setListViewHeightBasedOnChildren(userCardsList);
+        scrollView.smoothScrollTo(0,0);
 
         //method to isolate the information on clicked card
-        UserCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        userCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-
                 Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
-                Card choosedUserCard = (Card) UserCardsList.getItemAtPosition(i);
+                Card choosedUserCard = (Card) userCardsList.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 intent.putExtra("userLoginString", userLogin);
                 startActivity(intent);
@@ -88,5 +96,26 @@ public class userHomeActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         cardBDD.close();
         startActivity(intent);
+    }
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)
+            return;
+
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            view = listAdapter.getView(i, view, listView);
+            if (i == 0)
+                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += view.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 }

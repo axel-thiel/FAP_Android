@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
  */
 public class DetailAndResultCardActivity extends Activity {
     String userLogin;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class DetailAndResultCardActivity extends Activity {
         setContentView(R.layout.card_detail_and_results);
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
+        scrollView = (ScrollView) findViewById(R.id.card_detail_scroll_view);
 
         TextView textViewSport = (TextView) findViewById(R.id.detail_text_view_sport);
         TextView textViewVille = (TextView) findViewById(R.id.detail_text_view_ville);
@@ -42,7 +47,6 @@ public class DetailAndResultCardActivity extends Activity {
         textViewComment.setText(UserCardChoose.getComment());
 
 
-
         // method to find associated cards in the fake database
         List<Card> associatedCards = DataBaseUserCard.createListOfAssociatedCard(UserCardChoose);
 
@@ -53,25 +57,24 @@ public class DetailAndResultCardActivity extends Activity {
         String activitySearched = UserCardChoose.getActivity();
         String citySearched = UserCardChoose.getCity();
 
-        while(cursor.moveToNext())
-        {
-            String cursorLogin=cursor.getString(1);
-            String cursorActivity=cursor.getString(3);
-            String cursorCity=cursor.getString(5);
+        while (cursor.moveToNext()) {
+            String cursorLogin = cursor.getString(1);
+            String cursorActivity = cursor.getString(3);
+            String cursorCity = cursor.getString(5);
 
-            if(!cursorLogin.equals(userLogin) && cursorActivity.equals(activitySearched) &&
-                    cursorCity.equals(citySearched))
-            {
-                Card tmpCard = new Card(cursor.getString(3),cursor.getString(5),cursor.getString(1),
-                        cursor.getString(6),cursor.getString(2), cursor.getString(4));
+            if (!cursorLogin.equals(userLogin) && cursorActivity.equals(activitySearched) &&
+                    cursorCity.equals(citySearched)) {
+                Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                        cursor.getString(6), cursor.getString(2), cursor.getString(4));
                 associatedCards.add(tmpCard);
             }
         }
 
 
-
         FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, associatedCards);
         listAssociatedCard.setAdapter(ficheUserAdapter);
+        setListViewHeightBasedOnChildren(listAssociatedCard);
+        scrollView.smoothScrollTo(0,0);
 
         //method to isolate the information on clicked card
         listAssociatedCard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -96,7 +99,29 @@ public class DetailAndResultCardActivity extends Activity {
 
     public void onHomeUser(View view) {
         Intent intent = new Intent(this, userHomeActivity.class);
-        intent.putExtra("userLoginString",userLogin);
+        intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
     }
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)
+            return;
+
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            view = listAdapter.getView(i, view, listView);
+            if (i == 0)
+                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += view.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+    }
+
 }
