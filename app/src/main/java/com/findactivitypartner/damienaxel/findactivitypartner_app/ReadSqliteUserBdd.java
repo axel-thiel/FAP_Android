@@ -15,7 +15,7 @@ public class ReadSqliteUserBdd {
         String userLogin = loginUser;
         userBDD = userBdd;
         Cursor cursor = userBDD.getUserList();
-     
+
 
         while (cursor.moveToNext()) {
             String c1 = cursor.getString(1);
