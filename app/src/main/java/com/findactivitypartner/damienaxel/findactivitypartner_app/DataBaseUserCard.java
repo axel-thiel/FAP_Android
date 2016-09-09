@@ -26,20 +26,20 @@ public class DataBaseUserCard {
 
         // création d'une base de donné avec 3 utilisateurs
 
-        Card fiche1 = new Card("Footing", "Lyon", "Damien", "Niveau1","mail", "comment");
-        Card fiche2 = new Card("Footing", "Bordeau", "Damien",  "Niveau1","mail", "comment");
-        Card fiche3 = new Card("Foot", "Lyon", "Damien", "Niveau1","mail", "comment");
-        Card fiche4 = new Card("Footing", "Toulouse", "Damien", "Niveau1","mail", "comment");
+        Card fiche1 = new Card("Footing", "Lyon", "Damien", "Pro","damien@gmil.com", "j'aime courir");
+        Card fiche2 = new Card("Footing", "Bordeau", "Damien",  "Niveau faible","damien@gmil.com", "pas de commentaire");
+        Card fiche3 = new Card("Foot", "Lyon", "Damien", "Niveau moyen","damien@gmil.com", "dispo que le WE");
+        Card fiche4 = new Card("Footing", "Toulouse", "Damien", "novice","damien@gmil.com", "n'aime pas courir en ville");
 
-        Card fiche5 = new Card("Footing", "Lyon", "Axel", "Niveau1","mail", "comment");
-        Card fiche6 = new Card("Footing", "Troyes", "Axel",  "Niveau1","mail", "comment");
-        Card fiche7 = new Card("Foot", "Lyon", "Axel",  "Niveau1","mail", "comment");
-        Card fiche8 = new Card("Judo", "Toulouse", "Axel", "Niveau1","mail", "comment");
+        Card fiche5 = new Card("Footing", "Lyon", "Axel", "Niveau expert","axel@gmail.com", "doucement mais surement");
+        Card fiche6 = new Card("Footing", "Troyes", "Axel",  "bon","axel@gmail.com", "au centre ville");
+        Card fiche7 = new Card("Foot", "Lyon", "Axel",  "débutant","axel@gmail.com", "dispo la semaine");
+        Card fiche8 = new Card("Judo", "Toulouse", "Axel", "ceinture bleue","axel@gmail.com", "pas de commentaire");
 
-        Card fiche9 = new Card("Footing", "Lyon", "Mélanie", "Niveau1","mail", "comment");
-        Card fiche10 = new Card("Footing", "Dijon", "Mélanie", "Niveau1","mail", "comment");
-        Card fiche11 = new Card("Foot", "Lyon", "Mélanie", "Niveau1","mail", "comment");
-        Card fiche12 = new Card("Judo", "Toulouse", "Mélanie", "Niveau1","mail", "comment");
+        Card fiche9 = new Card("Footing", "Lyon", "Mélanie", "correct","melanie@gmail.com", "rien à dire");
+        Card fiche10 = new Card("Footing", "Dijon", "Mélanie", "bon","melanie@gmail.com", "la semaine");
+        Card fiche11 = new Card("Foot", "Lyon", "Mélanie", "expert","melanie@gmail.com", "en petit groupe");
+        Card fiche12 = new Card("Judo", "Toulouse", "Mélanie", "novice","melanie@gmail.com", "en club");
 
         fullList = new ArrayList<>();
         fullList.add(fiche1);

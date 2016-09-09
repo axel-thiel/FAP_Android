@@ -28,12 +28,13 @@ public class FicheUserAdapter extends ArrayAdapter {
         TextView textViewSport = (TextView) convertView.findViewById(R.id.text_view_sport);
         TextView textViewVille = (TextView) convertView.findViewById(R.id.text_view_ville);
         TextView textViewPseudo = (TextView) convertView.findViewById(R.id.text_view_pseudo);
-
+        TextView textViewLevel = (TextView) convertView.findViewById(R.id.text_view_level);
 
 
         textViewSport.setText(listeActivite.get(position).getActivity());
         textViewVille.setText(listeActivite.get(position).getCity());
         textViewPseudo.setText(listeActivite.get(position).getLogin());
+        textViewLevel.setText(listeActivite.get(position).getLevel());
 
 
 

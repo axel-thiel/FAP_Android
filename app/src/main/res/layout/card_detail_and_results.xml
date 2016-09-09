@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/multisport_redim"
+   >
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
 
         >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Résultats ..."
-            android:textSize="20dp"
-            android:gravity="center"
+            android:textSize="30dp"
+            android:gravity="left"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
             />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            >
+
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liste de vos recherches"
+            android:layout_gravity="end"
+            android:layout_marginTop="30dp"
+            android:onClick="onHomeUser"
+            android:background="@drawable/button_layout"
+            android:textSize="12dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Déconnexion"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:onClick="onDisconnect"
+            android:background="@drawable/button_layout"
+            android:elevation="8dp"
+            android:textSize="12dp"
+            />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -23,6 +66,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/bordure_layout"
+        android:layout_marginBottom="20dp"
         >
 
             <LinearLayout
@@ -35,13 +79,14 @@
                 <TextView
                     android:gravity="center"
                     android:id="@+id/detail_text_view_pseudo"
-                    android:hint="Pseudo"
+                    android:hint="Identifiant"
                     android:textSize="20dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingEnd="10dp"
+                    android:paddingEnd="5dp"
                     android:textStyle="bold"
+
                     />
 
 
@@ -54,7 +99,7 @@
 
         <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="60dp"
                     android:orientation="horizontal"
                     >
 
@@ -62,12 +107,12 @@
 
                 android:layout_gravity="center"
                 android:id="@+id/detail_text_view_sport"
-                android:hint="Sport"
+                android:hint="Activité"
                 android:textSize="18dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:paddingEnd="10dp"
+                android:paddingEnd="5dp"
 
                 />
 
@@ -75,24 +120,24 @@
 
                 android:layout_gravity="center"
                 android:id="@+id/detail_text_view_ville"
-                android:hint="City"
+                android:hint="Ville"
                 android:textSize="18dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:paddingEnd="10dp"
+                android:paddingEnd="5dp"
 
                 />
 
                     <TextView
                         android:layout_gravity="center"
-                        android:id="@+id/detail_text_view_niveau"
-                        android:hint="level"
+                        android:id="@+id/detail_text_view_level"
+                        android:hint="Niveau"
                         android:textSize="18dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:paddingEnd="10dp"
+                        android:paddingEnd="5dp"
 
                         />
 
@@ -102,13 +147,12 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="80dp">
+            android:layout_height="30dp">
 
             <TextView
                 android:id="@+id/detail_text_view_email"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:textSize="18dp"
                 android:hint = "email"
                 android:textStyle="italic"
@@ -119,15 +163,15 @@
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="80dp">
+    android:layout_height="60dp">
 
     <TextView
-    android:id="@+id/detail_text_view_commentaire"
+    android:id="@+id/detail_text_view_comment"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:textSize="18dp"
-    android:hint = "Commentaires ..."
+    android:hint = "Aucun commentaire"
     android:textStyle="italic"
     />
 
@@ -146,12 +190,15 @@
             android:id="@+id/list_view_associatedCards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             >
         </ListView>
 
 
 
     </LinearLayout>
+
+
 
 
 

@@ -47,6 +47,7 @@ public class CreateNewCardActivity extends Activity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     // Apply the adapter to the spinner
         spinnerActivity.setAdapter(adapter);
+        textViewMail.setText(userMail);
 
         }
     public void onCreateResearchCard(View view) {
@@ -55,7 +56,7 @@ public class CreateNewCardActivity extends Activity {
                 textViewCity.getText().toString(),
                 userLogin,
                 textViewLevel.getText().toString(),
-                textViewMail.getText().toString(),
+                userMail,
                 textViewComment.getText().toString());
 
         cardBdd = new CardBDD(this);
