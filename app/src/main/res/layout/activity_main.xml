@@ -15,12 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nouvel utilisateur"
-        android:textSize="@dimen/Titre2"
+        android:textSize="@dimen/Titre4"
         android:onClick="onCreateNewUser"
         android:layout_marginBottom="50sp"
         android:layout_gravity="right"
         android:background="@drawable/button_layout"
         android:layout_marginTop="10sp"
+
 
 
 
@@ -36,6 +37,8 @@
         android:layout_marginTop="50sp"
         android:background="@drawable/bordure_layout_simple"
         android:layout_gravity="center"
+
+
         />
 
     <EditText
@@ -56,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Connexion"
-        android:textSize="@dimen/Titre2"
+        android:textSize="@dimen/Titre4"
         android:onClick="onHomeUser"
         android:layout_gravity="center"
         android:background="@drawable/button_layout"
@@ -68,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="liste des utilisateurs (log)"
-        android:textSize="@dimen/Titre2"
+        android:textSize="@dimen/Titre4"
         android:onClick="onBDDAccess"
         android:layout_marginTop="200sp"
         android:layout_gravity="start"
@@ -80,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="liste des recherches (log)"
-        android:textSize="@dimen/Titre2"
+        android:textSize="@dimen/Titre4"
         android:onClick="onBDDCardsAccess"
         android:layout_gravity="start"
         android:background="@drawable/button_layout"

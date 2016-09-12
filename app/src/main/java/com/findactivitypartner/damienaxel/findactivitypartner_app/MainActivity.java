@@ -71,7 +71,11 @@ public class MainActivity extends Activity {
                 }
             }
 
-            if (cursor.isLast()){ Toast.makeText(this, "Incorrect login",Toast.LENGTH_LONG).show();}
+            if (cursor.isLast()){ Toast.makeText(this, "Incorrect login",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
 
         userBDD.close();
