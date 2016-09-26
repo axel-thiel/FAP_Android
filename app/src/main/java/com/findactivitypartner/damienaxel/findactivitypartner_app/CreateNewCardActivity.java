@@ -2,13 +2,10 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 /**
@@ -36,9 +33,6 @@ public class CreateNewCardActivity extends Activity {
         setContentView(R.layout.create_card_user);
         textViewLogin = (TextView) findViewById(R.id.new_card_login);
         textViewMail = (TextView) findViewById(R.id.new_card_email);
-        //textViewActivity = (TextView) findViewById(R.id.new_card_activity);
-        //textViewCity = (TextView) findViewById(R.id.new_card_city);
-        //textViewLevel = (TextView) findViewById(R.id.new_card_level);
         textViewComment = (TextView) findViewById(R.id.new_card_comment);
         spinnerActivity = (Spinner) findViewById(R.id.spinner_activity);
         spinnerCity = (Spinner) findViewById(R.id.spinner_city);
@@ -60,6 +54,7 @@ public class CreateNewCardActivity extends Activity {
         adapterlevel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLevel.setAdapter(adapterlevel);
         }
+
     public void onCreateResearchCard(View view) {
 
         Card newCard = new Card(spinnerActivity.getSelectedItem().toString(),
@@ -69,12 +64,12 @@ public class CreateNewCardActivity extends Activity {
                 userMail,
                 textViewComment.getText().toString());
 
-        cardBdd = new CardBDD(this);
+        cardBdd = BddFactory.getCardBdd(this);
         cardBdd.open();
         cardBdd.insertNewCard(newCard);
         cardBdd.close();
 
-        Intent intent = new Intent(this, userHomeActivity.class);
+        Intent intent = new Intent(this, UserHomeActivity.class);
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
 

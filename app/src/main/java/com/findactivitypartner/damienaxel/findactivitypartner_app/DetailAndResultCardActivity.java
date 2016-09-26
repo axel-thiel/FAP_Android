@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,10 +49,10 @@ public class DetailAndResultCardActivity extends Activity {
 
 
         // method to find associated cards in the fake database
-        List<Card> associatedCards = DataBaseUserCard.createListOfAssociatedCard(UserCardChoose);
-
+//        List<Card> associatedCards = DataBaseUserCard.createListOfAssociatedCard(UserCardChoose);
+        List<Card> associatedCards = new ArrayList<Card>();
         //method to fond associated cards in the sqlite bdd
-        CardBDD cardBDD = new CardBDD(this);
+        CardBDD cardBDD = BddFactory.getCardBdd(this);
         Cursor cursor = cardBDD.getCardList();
 
         String activitySearched = UserCardChoose.getActivity();
@@ -98,7 +99,7 @@ public class DetailAndResultCardActivity extends Activity {
     }
 
     public void onHomeUser(View view) {
-        Intent intent = new Intent(this, userHomeActivity.class);
+        Intent intent = new Intent(this, UserHomeActivity.class);
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
     }

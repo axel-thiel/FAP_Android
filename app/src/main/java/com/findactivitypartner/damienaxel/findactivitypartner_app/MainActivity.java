@@ -3,11 +3,8 @@ package com.findactivitypartner.damienaxel.findactivitypartner_app;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteQueryBuilder;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,11 +22,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DataBaseUserCard.createFullList();
         userLogin = (EditText) findViewById(R.id.edit_text_login);
         userPass = (EditText) findViewById(R.id.edit_text_password);
-        userBDD = new UserBDD(this);
-        cardBDD = new CardBDD(this);
+        userBDD = BddFactory.getUserBdd(this);
+        cardBDD = BddFactory.getCardBdd(this);
 
     }
 
@@ -43,7 +39,7 @@ public class MainActivity extends Activity {
     }
 
     private void checkUserLogin(String userLoginString, String userPassString) {
-        Cursor cursor =userBDD.getUserList();
+        Cursor cursor = userBDD.getUserList();
         while(cursor.moveToNext())
         {
             String c1=cursor.getString(1);
@@ -57,7 +53,7 @@ public class MainActivity extends Activity {
                             "You are succesfully logged in.",
                             Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(this, userHomeActivity.class);
+                    Intent intent = new Intent(this, UserHomeActivity.class);
                     intent.putExtra("userLoginString", userLoginString);
                     startActivity(intent);
                     break;
@@ -77,9 +73,6 @@ public class MainActivity extends Activity {
                 break;
             }
         }
-
-        userBDD.close();
-
 
     }
 

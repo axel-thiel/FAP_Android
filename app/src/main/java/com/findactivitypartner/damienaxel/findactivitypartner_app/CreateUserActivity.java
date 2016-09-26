@@ -32,7 +32,7 @@ public class CreateUserActivity extends Activity {
         User newUser = new User(textViewLogin.getText().toString(),textViewPassword.getText().toString(),
                 textViewEmail.getText().toString());
 
-        userBDD = new UserBDD(this);
+        userBDD = BddFactory.getUserBdd(this);
         userBDD.open();
         userBDD.insertNewUser(newUser);
         userBDD.close();

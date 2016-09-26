@@ -13,12 +13,13 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by maax on 02/08/16.
  */
-public class userHomeActivity extends Activity {
+public class UserHomeActivity extends Activity {
 
 
     String userLogin = null;
@@ -33,13 +34,13 @@ public class userHomeActivity extends Activity {
         setContentView(R.layout.user_home);
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
-        cardBDD = new CardBDD(this);
+        cardBDD = BddFactory.getCardBdd(this);
         scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
 
 
 
-        List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
-
+//        List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
+        List<Card> sortedCardsList = new ArrayList<Card>();
         Cursor cursor = cardBDD.getCardList();
 
         while(cursor.moveToNext())
@@ -82,7 +83,8 @@ public class userHomeActivity extends Activity {
     }
 
     public void onCreateNewCard(View view){
-        UserBDD userBDD = new UserBDD(this);
+
+        UserBDD userBDD = BddFactory.getUserBdd(this);
         String userMail = new ReadSqliteUserBdd(userBDD, userLogin).getUserProfil().getMail();
 
         Intent intent = new Intent(this, CreateNewCardActivity.class);
