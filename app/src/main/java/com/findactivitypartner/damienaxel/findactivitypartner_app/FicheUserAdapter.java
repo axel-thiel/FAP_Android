@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,28 +16,43 @@ import java.util.List;
 public class FicheUserAdapter extends ArrayAdapter {
 
 
-    private  List<Card> listeActivite;
+    private  List<Card> listOfActivity;
 
     public FicheUserAdapter(Context context, int resource, List<Card> liste) {
         super(context, resource, liste);
-        listeActivite = liste;
+        listOfActivity = liste;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_fiche_user, parent, false);
-        TextView textViewSport = (TextView) convertView.findViewById(R.id.text_view_sport);
-        TextView textViewVille = (TextView) convertView.findViewById(R.id.text_view_ville);
-        TextView textViewPseudo = (TextView) convertView.findViewById(R.id.text_view_pseudo);
-        TextView textViewLevel = (TextView) convertView.findViewById(R.id.text_view_level);
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_detail_fiche_user, parent, false);
+        TextView textViewSport = (TextView) convertView.findViewById(R.id.detail_view_activity);
+        TextView textViewVille = (TextView) convertView.findViewById(R.id.detail_view_city);
+        TextView textViewPseudo = (TextView) convertView.findViewById(R.id.detail_view_pseudo);
+        TextView textViewLevel = (TextView) convertView.findViewById(R.id.detail_view_level);
+        TextView textViewEmail = (TextView) convertView.findViewById(R.id.detail_view_email);
+        TextView textViewComment = (TextView) convertView.findViewById(R.id.detail_view_comment);
 
 
-        textViewSport.setText(listeActivite.get(position).getActivity());
-        textViewVille.setText(listeActivite.get(position).getCity());
-        textViewPseudo.setText(listeActivite.get(position).getLogin());
-        textViewLevel.setText(listeActivite.get(position).getLevel());
+        textViewSport.setText(listOfActivity.get(position).getActivity());
+        textViewVille.setText(listOfActivity.get(position).getCity());
+        textViewPseudo.setText(listOfActivity.get(position).getLogin());
+        textViewLevel.setText(listOfActivity.get(position).getLevel());
+        textViewEmail.setText(listOfActivity.get(position).getMail());
+        textViewComment.setText(listOfActivity.get(position).getComment());
 
+        Button deleteBtn = (Button)convertView.findViewById(R.id.deleteButon);
+        deleteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                CardBDD cardBDD = BddFactory.getCardBdd(getContext());
+                String IdCard = listOfActivity.get(position).getCardId();
+                cardBDD.deleteCard(IdCard);
+                listOfActivity.remove(position);
+                notifyDataSetChanged();
 
+            }
+        });
 
 
         return convertView;

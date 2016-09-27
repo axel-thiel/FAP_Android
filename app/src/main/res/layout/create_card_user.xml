@@ -19,8 +19,20 @@
         android:textColor="@android:color/holo_blue_dark"
         android:background="@drawable/titrebackground"
         android:textSize="@dimen/Titre1"
+        android:layout_gravity="center"
         />
 
+    <Button
+        android:textSize="@dimen/Titre2"
+        android:id="@id/button_create_new_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:onClick="onCreateResearchCard"
+        android:text="Ok"
+        android:background="@drawable/button_layout"
+
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,18 +94,7 @@
         android:background="@drawable/bordure_layout_simple"
         />
 
-    <Button
-        android:textSize="@dimen/Titre2"
-        android:id="@id/button_create_new_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="30sp"
-        android:onClick="onCreateResearchCard"
-        android:text="Ok"
-        android:background="@drawable/button_layout"
 
-        />
 
         
 

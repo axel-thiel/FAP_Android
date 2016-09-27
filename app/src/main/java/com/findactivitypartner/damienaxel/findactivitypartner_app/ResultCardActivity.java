@@ -18,35 +18,22 @@ import java.util.List;
 /**
  * Created by maax on 03/08/16.
  */
-public class DetailAndResultCardActivity extends Activity {
+public class ResultCardActivity extends Activity {
     String userLogin;
     ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.card_detail_and_results);
+        setContentView(R.layout.card_results);
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
         scrollView = (ScrollView) findViewById(R.id.card_detail_scroll_view);
 
-        TextView textViewActivity = (TextView) findViewById(R.id.detail_text_view_activity);
-        TextView textViewCity = (TextView) findViewById(R.id.detail_text_view_city);
-        TextView textViewPseudo = (TextView) findViewById(R.id.detail_text_view_pseudo);
-        TextView textViewLevel = (TextView) findViewById(R.id.detail_text_view_level);
-        TextView textViewEmail = (TextView) findViewById(R.id.detail_text_view_email);
-        TextView textViewComment = (TextView) findViewById(R.id.detail_text_view_comment);
+        final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
         Card UserCardChoose = (Card) bundle.get("choosedUserCard");
 
-        textViewActivity.setText(UserCardChoose.getActivity());
-        textViewCity.setText(UserCardChoose.getCity());
-        textViewPseudo.setText(UserCardChoose.getLogin());
-        textViewLevel.setText(UserCardChoose.getLevel());
-        textViewEmail.setText(UserCardChoose.getMail());
-        textViewComment.setText(UserCardChoose.getComment());
-
-        final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards2);
 
         List<Card> associatedCards = new ArrayList<Card>();
         //method to fond associated cards in the sqlite bdd
@@ -69,6 +56,7 @@ public class DetailAndResultCardActivity extends Activity {
                 associatedCards.add(tmpCard);
             }
         }
+
 
         FicheUserAdapterSmall ficheUserAdapterSmall = new FicheUserAdapterSmall(this, R.layout.adapter_fiche_user, associatedCards);
         listAssociatedCard.setAdapter(ficheUserAdapterSmall);

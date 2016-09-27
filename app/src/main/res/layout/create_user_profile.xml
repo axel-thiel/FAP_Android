@@ -18,7 +18,19 @@
             android:text="Nouvel utilisateur ..."
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="@dimen/Titre1"
+            android:layout_gravity="center"
 
+            />
+
+        <Button
+            android:id="@id/button_create_new_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/button_layout"
+            android:onClick="onCreateUser"
+            android:text="Ok"
+            android:textSize="@dimen/Titre2"
             />
 
         <EditText
@@ -57,18 +69,6 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="confirmation email"
-            android:textSize="@dimen/Titre2"
-            />
-
-        <Button
-            android:id="@id/button_create_new_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="30sp"
-            android:background="@drawable/button_layout"
-            android:onClick="onCreateUser"
-            android:text="Ok"
             android:textSize="@dimen/Titre2"
             />
 

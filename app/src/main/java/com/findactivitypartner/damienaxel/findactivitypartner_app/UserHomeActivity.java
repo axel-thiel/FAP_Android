@@ -21,11 +21,10 @@ import java.util.List;
  */
 public class UserHomeActivity extends Activity {
 
-
     String userLogin = null;
     CardBDD cardBDD;
     ScrollView scrollView;
-
+    ListView userCardsList;
 
 
     @Override
@@ -36,8 +35,6 @@ public class UserHomeActivity extends Activity {
         userLogin = bundle.getString("userLoginString");
         cardBDD = BddFactory.getCardBdd(this);
         scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
-
-
 
 //        List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
         List<Card> sortedCardsList = new ArrayList<Card>();
@@ -51,32 +48,27 @@ public class UserHomeActivity extends Activity {
             {
                 Card tmpCard = new Card(cursor.getString(3),cursor.getString(5),cursor.getString(1),
                         cursor.getString(6),cursor.getString(2), cursor.getString(4));
+                tmpCard.setCardId(cursor.getString(0));
                 sortedCardsList.add(tmpCard);
             }
         }
 
-
-        final ListView userCardsList = (ListView) findViewById(R.id.user_card_list);
-
+        userCardsList = (ListView) findViewById(R.id.user_card_list);
         // use custum adapter to show the list
-        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_fiche_user, sortedCardsList);
+        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_detail_fiche_user, sortedCardsList);
         userCardsList.setAdapter(ficheUserAdapter);
         setListViewHeightBasedOnChildren(userCardsList);
         scrollView.smoothScrollTo(0,0);
-
         //method to isolate the information on clicked card
         userCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Intent intent = new Intent(view.getContext(), DetailAndResultCardActivity.class);
+                Intent intent = new Intent(view.getContext(), ResultCardActivity.class);
                 Card choosedUserCard = (Card) userCardsList.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 intent.putExtra("userLoginString", userLogin);
                 startActivity(intent);
             }
-
         });
 
 
@@ -120,4 +112,5 @@ public class UserHomeActivity extends Activity {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
     }
+
 }

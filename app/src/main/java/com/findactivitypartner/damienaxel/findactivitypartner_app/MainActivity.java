@@ -68,53 +68,47 @@ public class MainActivity extends Activity {
             }
 
             if (cursor.isLast()){ Toast.makeText(this, "Incorrect login",Toast.LENGTH_LONG).show();
+
+                //to check all users and all cards in the log monitor
+                Cursor cursor1 = userBDD.getUserList();
+                if (cursor1 != null && cursor1.moveToFirst()) {
+                    do{
+                        Log.d(" UserBdd / Login =",
+                                cursor1.getString( cursor1.getColumnIndex("Login"))+
+                                        ", Password =" +cursor1.getString( cursor1.getColumnIndex("Password"))+
+                                        ", Email =" +cursor1.getString( cursor1.getColumnIndex("Email")) +""
+                        );
+                    }while (cursor1.moveToNext());
+                    cursor1.close();
+                }
+
+                Cursor cursor2 = cardBDD.getCardList();
+
+                if (cursor2 != null && cursor2.moveToFirst()) {
+                    do{
+                        Log.d(" CardBdd / Login =",
+                                cursor2.getString( cursor2.getColumnIndex("Login"))
+                                        +", Mail =" +cursor2.getString( cursor2.getColumnIndex("Mail"))
+                                        +", Activity =" +cursor2.getString( cursor2.getColumnIndex("Activity"))
+                                        +", City =" +cursor2.getString( cursor2.getColumnIndex("City"))
+                                        +", Level =" +cursor2.getString( cursor2.getColumnIndex("Level"))
+                                        +", Comment =" +cursor2.getString( cursor2.getColumnIndex("Comment"))
+                                        +""
+                        );
+                    }while (cursor2.moveToNext());
+                    cursor2.close();
+                }
+
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             }
         }
-
     }
-
 
     public void onCreateNewUser(View view) {
         Intent intent = new Intent(this, CreateUserActivity.class);
         startActivity(intent);
-    }
-
-
-    public void onBDDAccess(View view) {
-        Cursor cursor = userBDD.getUserList();
-
-        if (cursor != null && cursor.moveToFirst()) {
-            do{
-                Log.d(" UserBdd / Login =",
-                        cursor.getString( cursor.getColumnIndex("Login"))+
-                                ", Password =" +cursor.getString( cursor.getColumnIndex("Password"))+
-                                ", Email =" +cursor.getString( cursor.getColumnIndex("Email")) +""
-                        );
-            }while (cursor.moveToNext());
-            cursor.close();
-        }
-    }
-
-    public void onBDDCardsAccess(View view) {
-        Cursor cursor = cardBDD.getCardList();
-
-        if (cursor != null && cursor.moveToFirst()) {
-            do{
-                Log.d(" CardBdd / Login =",
-                        cursor.getString( cursor.getColumnIndex("Login"))
-                                +", Mail =" +cursor.getString( cursor.getColumnIndex("Mail"))
-                                +", Activity =" +cursor.getString( cursor.getColumnIndex("Activity"))
-                                +", City =" +cursor.getString( cursor.getColumnIndex("City"))
-                                +", Level =" +cursor.getString( cursor.getColumnIndex("Level"))
-                                +", Comment =" +cursor.getString( cursor.getColumnIndex("Comment"))
-                                +""
-                );
-            }while (cursor.moveToNext());
-            cursor.close();
-        }
     }
 
     @Override

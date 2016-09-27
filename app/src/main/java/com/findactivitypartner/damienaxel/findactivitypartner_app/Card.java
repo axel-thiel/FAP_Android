@@ -13,6 +13,7 @@ public class Card implements Serializable {
     private String level;
     private String mail;
     private String comment;
+    private String cardId;
 
     public Card(){
 
@@ -27,6 +28,7 @@ public class Card implements Serializable {
         this.level = level;
         this.mail = mail;
         this.comment = comment;
+
 
 
     }
@@ -77,5 +79,13 @@ public class Card implements Serializable {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
     }
 }
