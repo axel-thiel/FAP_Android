@@ -39,28 +39,27 @@ public class UserBDD extends SQLiteOpenHelper {
         this.insertNewUser(new User("Mélanie", "mélanie", "melanie@gmail.com"));
     }
 
-    public void open(){
+    public void open() {
         sqLiteDatabase = this.getWritableDatabase();
     }
 
-    public void close(){
+    public void close() {
         sqLiteDatabase.close();
     }
 
-    public Cursor getUserList(){
+    public Cursor getUserList() {
         if (sqLiteDatabase != null) {
-
             return sqLiteDatabase.rawQuery(" SELECT * FROM " + TABLE_USER, null);
         }
-       return null;
+        return null;
     }
 
-    public void insertNewUser(User newUser){
+    public void insertNewUser(User newUser) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(LOGIN, newUser.getLogin());
         contentValues.put(PASSWORD, newUser.getPassword());
         contentValues.put(EMAIL, newUser.getUserMail());
-        sqLiteDatabase.insert(TABLE_USER,null,contentValues);
+        sqLiteDatabase.insert(TABLE_USER, null, contentValues);
     }
 
     public SQLiteDatabase getSqLiteDatabase() {
@@ -73,6 +72,5 @@ public class UserBDD extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
 }

@@ -21,16 +21,12 @@ public class Card implements Serializable {
 
     public Card(String activity, String city, String login,
                 String level, String mail, String comment) {
-
         this.activity = activity;
         this.city = city;
         this.login = login;
         this.level = level;
         this.mail = mail;
         this.comment = comment;
-
-
-
     }
 
     public String getActivity() {

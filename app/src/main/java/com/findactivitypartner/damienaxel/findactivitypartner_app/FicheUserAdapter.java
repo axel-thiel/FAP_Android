@@ -1,6 +1,7 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,7 @@ import java.util.List;
  */
 public class FicheUserAdapter extends ArrayAdapter {
 
-
-    private  List<Card> listOfActivity;
+    private List<Card> listOfActivity;
 
     public FicheUserAdapter(Context context, int resource, List<Card> liste) {
         super(context, resource, liste);
@@ -33,7 +33,6 @@ public class FicheUserAdapter extends ArrayAdapter {
         TextView textViewEmail = (TextView) convertView.findViewById(R.id.detail_view_email);
         TextView textViewComment = (TextView) convertView.findViewById(R.id.detail_view_comment);
 
-
         textViewSport.setText(listOfActivity.get(position).getActivity());
         textViewVille.setText(listOfActivity.get(position).getCity());
         textViewPseudo.setText(listOfActivity.get(position).getLogin());
@@ -41,8 +40,8 @@ public class FicheUserAdapter extends ArrayAdapter {
         textViewEmail.setText(listOfActivity.get(position).getMail());
         textViewComment.setText(listOfActivity.get(position).getComment());
 
-        Button deleteBtn = (Button)convertView.findViewById(R.id.deleteButon);
-        deleteBtn.setOnClickListener(new View.OnClickListener(){
+        Button deleteBtn = (Button) convertView.findViewById(R.id.deleteButon);
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CardBDD cardBDD = BddFactory.getCardBdd(getContext());
@@ -54,6 +53,19 @@ public class FicheUserAdapter extends ArrayAdapter {
             }
         });
 
+        Button resultBtn = (Button) convertView.findViewById(R.id.resultButon);
+        resultBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CardBDD cardBDD = BddFactory.getCardBdd(getContext());
+                String IdCard = listOfActivity.get(position).getCardId();
+                Intent intent = new Intent(getContext(), ResultCardActivity.class);
+                Card choosedUserCard = (Card) listOfActivity.get(position);
+                intent.putExtra("choosedUserCard", choosedUserCard);
+                intent.putExtra("userLoginString", listOfActivity.get(position).getLogin());
+                getContext().startActivity(intent);
+            }
+        });
 
         return convertView;
     }

@@ -16,19 +16,14 @@ public class ReadSqliteUserBdd {
         userBDD = userBdd;
         Cursor cursor = userBDD.getUserList();
 
-
         while (cursor.moveToNext()) {
             String c1 = cursor.getString(1);
 
             if (c1.equals(userLogin)) {
-
                 userProfile.setMail(cursor.getString(3));
-
             }
         }
-
     }
-
 
     public Card getUserProfil() {
         return userProfile;

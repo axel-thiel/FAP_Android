@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
 
-    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20sp"
         android:background="@drawable/bordure_layout"
-        android:orientation="vertical"
-
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
 
             <TextView
                 android:id="@+id/detail_view_pseudo"
@@ -29,13 +26,9 @@
                 android:hint="Identifiant"
                 android:paddingEnd="5sp"
                 android:textSize="@dimen/Titre2"
-                android:textStyle="bold"
-
-                />
-
+                android:textStyle="bold" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +36,6 @@
             android:orientation="horizontal">
 
             <TextView
-
                 android:id="@+id/detail_view_activity"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
@@ -51,12 +43,9 @@
                 android:layout_weight="2"
                 android:hint="Activité"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-
-                />
+                android:textSize="@dimen/Titre2" />
 
             <TextView
-
                 android:id="@+id/detail_view_city"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
@@ -64,9 +53,7 @@
                 android:layout_weight="2"
                 android:hint="Ville"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-
-                />
+                android:textSize="@dimen/Titre2" />
 
             <TextView
                 android:id="@+id/detail_view_level"
@@ -76,10 +63,7 @@
                 android:layout_weight="2"
                 android:hint="Niveau"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-
-                />
-
+                android:textSize="@dimen/Titre2" />
 
         </LinearLayout>
 
@@ -93,17 +77,14 @@
                 android:layout_height="wrap_content"
                 android:hint="email"
                 android:textSize="@dimen/Titre2"
-                android:textStyle="italic"
-
-                />
+                android:textStyle="italic" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="60sp"
-            >
+            android:minHeight="60sp">
 
             <TextView
                 android:id="@+id/detail_view_comment"
@@ -116,26 +97,50 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/deleteButon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="right"
-            android:background="@drawable/ic_delete_forever_black_24dp"
-            android:onClick="onDeleteResearch"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/deleteButon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ic_delete_forever_blue_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/resultButon"
+                    android:layout_width="71dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/ic_find_in_page_blue_24dp"
+                    android:onClick="onSearchResults" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5sp"
-        >
+        android:layout_marginBottom="5sp">
 
-
-
-
-</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

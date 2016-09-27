@@ -15,8 +15,8 @@
             android:layout_marginBottom="30sp"
             android:layout_marginTop="30sp"
             android:background="@drawable/titrebackground"
-            android:text="Nouvel utilisateur ..."
-            android:textColor="@android:color/holo_blue_dark"
+            android:text="  Nouvel utilisateur ...  "
+            android:textColor="#0066cc"
             android:textSize="@dimen/Titre1"
             android:layout_gravity="center"
 
@@ -24,6 +24,7 @@
 
         <Button
             android:id="@id/button_create_new_user"
+            android:textColor="#0066cc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -49,6 +50,16 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:textSize="@dimen/Titre2"/>
+
+        <EditText
+            android:id="@+id/confirm_new_userpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/bordure_layout_simple"
+            android:hint="Confirmation mot de passe"
             android:inputType="textPassword"
             android:textSize="@dimen/Titre2"/>
 

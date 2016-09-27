@@ -11,7 +11,7 @@ public class BddFactory {
         return new UserBDD(context, "toto", null, 1);
     }
 
-    public static CardBDD getCardBdd(Context context){
+    public static CardBDD getCardBdd(Context context) {
         return new CardBDD(context, null, 1);
     }
 }

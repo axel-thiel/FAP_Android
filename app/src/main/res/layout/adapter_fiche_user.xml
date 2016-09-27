@@ -1,91 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    >
-<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/bordure_layout"
-    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:gravity="center"
-            android:id="@+id/text_view_pseudo"
-            android:hint="Identifiant"
-            android:textSize="@dimen/Titre2"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:paddingEnd="5sp"
-            android:textStyle="bold"
-
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-
-            android:layout_gravity="center"
-            android:id="@+id/text_view_activity"
-            android:hint="Activité"
-            android:textSize="@dimen/Titre2"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:paddingEnd="5sp"
-
-            />
-
-        <TextView
-
-            android:layout_gravity="center"
-            android:id="@+id/text_view_city"
-            android:hint="Ville"
-            android:textSize="@dimen/Titre2"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:paddingEnd="5sp"
-
-            />
-
-        <TextView
-
-            android:layout_gravity="center"
-            android:id="@+id/text_view_level"
-            android:hint="Niveau"
-            android:textSize="@dimen/Titre2"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:paddingEnd="5sp"
-
-            />
-
-    </LinearLayout>
-
-</LinearLayout>
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5sp"
-        >
+        android:background="@drawable/bordure_layout"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/text_view_pseudo"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:hint="Identifiant"
+                android:paddingEnd="5sp"
+                android:textSize="@dimen/Titre2"
+                android:textStyle="bold" />
 
+        </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:id="@+id/text_view_activity"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:hint="Activité"
+                android:paddingEnd="5sp"
+                android:textSize="@dimen/Titre2" />
+
+            <TextView
+                android:id="@+id/text_view_city"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:hint="Ville"
+                android:paddingEnd="5sp"
+                android:textSize="@dimen/Titre2" />
+
+            <TextView
+                android:id="@+id/text_view_level"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:hint="Niveau"
+                android:paddingEnd="5sp"
+                android:textSize="@dimen/Titre2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp">
+
+    </LinearLayout>
 
 </LinearLayout>

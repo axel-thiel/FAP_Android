@@ -29,11 +29,8 @@ public class ResultCardActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
         scrollView = (ScrollView) findViewById(R.id.card_detail_scroll_view);
-
-        final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
-
         Card UserCardChoose = (Card) bundle.get("choosedUserCard");
-
+        final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
         List<Card> associatedCards = new ArrayList<Card>();
         //method to fond associated cards in the sqlite bdd
@@ -48,20 +45,49 @@ public class ResultCardActivity extends Activity {
             String cursorActivity = cursor.getString(3);
             String cursorCity = cursor.getString(5);
 
-            if (!cursorLogin.equals(userLogin) && cursorActivity.equals(activitySearched) &&
-                    cursorCity.equals(citySearched)) {
-                Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
-                        cursor.getString(6), cursor.getString(2), cursor.getString(4));
-                tmpCard.setCardId(cursor.getString(0));
-                associatedCards.add(tmpCard);
+            if (!cursorLogin.equals(userLogin)) {
+                if (!activitySearched.equals("Tous les sports")) {
+                    if (!citySearched.equals("Toutes les villes")) {
+                        if (cursorActivity.equals(activitySearched) &&
+                                cursorCity.equals(citySearched)) {
+                            Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                                    cursor.getString(6), cursor.getString(2), cursor.getString(4));
+                            tmpCard.setCardId(cursor.getString(0));
+                            associatedCards.add(tmpCard);
+                        }
+                    }
+                    if (citySearched.equals("Toutes les villes")) {
+                        if (cursorActivity.equals(activitySearched)) {
+                            Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                                    cursor.getString(6), cursor.getString(2), cursor.getString(4));
+                            tmpCard.setCardId(cursor.getString(0));
+                            associatedCards.add(tmpCard);
+                        }
+                    }
+                }
+                if (activitySearched.equals("Tous les sports")) {
+                    if (!citySearched.equals("Toutes les villes")) {
+                        if (cursorCity.equals(citySearched)) {
+                            Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                                    cursor.getString(6), cursor.getString(2), cursor.getString(4));
+                            tmpCard.setCardId(cursor.getString(0));
+                            associatedCards.add(tmpCard);
+                        }
+                    }
+                    if (citySearched.equals("Toutes les villes")) {
+                        Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                                cursor.getString(6), cursor.getString(2), cursor.getString(4));
+                        tmpCard.setCardId(cursor.getString(0));
+                        associatedCards.add(tmpCard);
+                    }
+                }
             }
         }
-
 
         FicheUserAdapterSmall ficheUserAdapterSmall = new FicheUserAdapterSmall(this, R.layout.adapter_fiche_user, associatedCards);
         listAssociatedCard.setAdapter(ficheUserAdapterSmall);
         setListViewHeightBasedOnChildren(listAssociatedCard);
-        scrollView.smoothScrollTo(0,0);
+        scrollView.smoothScrollTo(0, 0);
 
         //method to isolate the information on clicked card
         listAssociatedCard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -110,5 +136,4 @@ public class ResultCardActivity extends Activity {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
     }
-
 }

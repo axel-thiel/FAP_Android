@@ -1,31 +1,37 @@
 <resources>
     <string name="app_name">Find Activity Partner</string>
     <string-array name="activity_array">
+        <item>Tous les sports</item>
+        <item>Boxe</item>
         <item>Foot</item>
         <item>Footing</item>
-        <item>Tennis</item>
+        <item>Judo</item>
         <item>Lutte</item>
-        <item>Boxe</item>
-        <item>Velo</item>
+        <item>Marche</item>
         <item>Ping Pong</item>
         <item>Rugby</item>
-        <item>Judo</item>
-        <item>Marche</item>
+        <item>Tennis</item>
+        <item>Velo</item>
+
     </string-array>
     <string-array name="city_array">
+        <item>Toutes les villes</item>
+        <item>Blaison-le-vaseux</item>
+        <item>Bordeaux</item>
         <item>Dijon</item>
+        <item>Lille</item>
         <item>Lyon</item>
         <item>Paris</item>
         <item>Toulouse</item>
-        <item>Bordeaux</item>
-        <item>New york</item>
-        <item>Blaison-le-vaseux</item>
+        <item>Virey-sous-Bar</item>
+
     </string-array>
     <string-array name="level_array">
-        <item>Nul</item>
+        <item>Tous niveaux</item>
+        <item>Débutant</item>
+        <item>Amateur</item>
         <item>Bon</item>
         <item>Expert</item>
-        <item>Juste pour rire</item>
-        <item>Dangereux</item>
+        <item>Professionnel</item>
     </string-array>
 </resources>

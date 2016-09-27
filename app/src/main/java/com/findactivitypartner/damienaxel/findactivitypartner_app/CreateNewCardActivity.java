@@ -21,7 +21,7 @@ public class CreateNewCardActivity extends Activity {
     private TextView textViewCity;
     private TextView textViewLevel;
     private TextView textViewComment;
-    private Spinner spinnerActivity,spinnerCity,spinnerLevel;
+    private Spinner spinnerActivity, spinnerCity, spinnerLevel;
     private String userMail;
 
     @Override
@@ -37,14 +37,15 @@ public class CreateNewCardActivity extends Activity {
         spinnerActivity = (Spinner) findViewById(R.id.spinner_activity);
         spinnerCity = (Spinner) findViewById(R.id.spinner_city);
         textViewLogin.setText(userLogin);
+
         ArrayAdapter<CharSequence> adaptercity = ArrayAdapter.createFromResource(this,
                 R.array.city_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.activity_array, android.R.layout.simple_spinner_item);
-    // Specify the layout to use when the list of choices appears
+        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    // Apply the adapter to the spinner
+        // Apply the adapter to the spinner
         spinnerActivity.setAdapter(adapter);
         spinnerCity.setAdapter(adaptercity);
         spinnerLevel = (Spinner) findViewById(R.id.spinner_level);
@@ -53,7 +54,7 @@ public class CreateNewCardActivity extends Activity {
         textViewMail.setText(userMail);
         adapterlevel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLevel.setAdapter(adapterlevel);
-        }
+    }
 
     public void onCreateResearchCard(View view) {
 
@@ -72,6 +73,5 @@ public class CreateNewCardActivity extends Activity {
         Intent intent = new Intent(this, UserHomeActivity.class);
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
-
     }
 }

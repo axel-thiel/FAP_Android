@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
     android:id="@+id/card_detail_scroll_view"
-    >
-
-
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -17,82 +13,64 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="28dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/ic_power_settings_new_white_24dp"
-                    android:onClick="onDisconnect"
-                    android:textSize="@dimen/Titre3"
-                    android:padding="10dp"
-                    android:layout_weight="0.11"
-                    android:layout_marginLeft="5sp"/>
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_power_settings_new_blue_24dp"
+                    android:onClick="onDisconnect" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="right"
-                android:weightSum="1"
-                >
+                android:weightSum="1">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="end"
-                    android:layout_marginRight="5sp"
-                    android:background="@drawable/button_layout"
-                    android:onClick="onHomeUser"
-                    android:text="Liste de vos recherches"
-                    android:textSize="@dimen/Titre4" />
+                    android:background="@drawable/ic_home_blue_24dp"
+                    android:onClick="onHomeUser" />
 
             </LinearLayout>
-
-
-
-
-
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="20sp"
                 android:layout_marginTop="30sp"
                 android:background="@drawable/titrebackground"
                 android:gravity="left"
-                android:text="Résultat selectioné :"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="@dimen/Titre1"
-                android:layout_gravity="center"
-                />
+                android:text="  Résultat selectioné :  "
+                android:textColor="#0066cc"
+                android:textSize="@dimen/Titre1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:orientation="horizontal">
-
                 >
-
 
             </LinearLayout>
         </LinearLayout>
@@ -102,15 +80,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:background="@drawable/bordure_layout"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
 
                 <TextView
                     android:id="@+id/detail_text_view_pseudo"
@@ -121,13 +96,9 @@
                     android:hint="Identifiant"
                     android:paddingEnd="5sp"
                     android:textSize="@dimen/Titre2"
-                    android:textStyle="bold"
-
-                    />
-
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -135,7 +106,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-
                     android:id="@+id/detail_text_view_activity"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
@@ -143,12 +113,9 @@
                     android:layout_weight="2"
                     android:hint="Activité"
                     android:paddingEnd="5sp"
-                    android:textSize="@dimen/Titre2"
-
-                    />
+                    android:textSize="@dimen/Titre2" />
 
                 <TextView
-
                     android:id="@+id/detail_text_view_city"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
@@ -156,9 +123,7 @@
                     android:layout_weight="2"
                     android:hint="Ville"
                     android:paddingEnd="5sp"
-                    android:textSize="@dimen/Titre2"
-
-                    />
+                    android:textSize="@dimen/Titre2" />
 
                 <TextView
                     android:id="@+id/detail_text_view_level"
@@ -168,10 +133,7 @@
                     android:layout_weight="2"
                     android:hint="Niveau"
                     android:paddingEnd="5sp"
-                    android:textSize="@dimen/Titre2"
-
-                    />
-
+                    android:textSize="@dimen/Titre2" />
 
             </LinearLayout>
 
@@ -185,17 +147,14 @@
                     android:layout_height="wrap_content"
                     android:hint="email"
                     android:textSize="@dimen/Titre2"
-                    android:textStyle="italic"
-
-                    />
+                    android:textStyle="italic" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="60sp"
-                >
+                android:minHeight="60sp">
 
                 <TextView
                     android:id="@+id/detail_text_view_comment"
@@ -213,15 +172,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="20sp"
             android:layout_marginTop="30sp"
             android:background="@drawable/titrebackground"
             android:gravity="left"
-            android:text="Liste des résultats :"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="@dimen/Titre1"
-            android:layout_gravity="center"
-            />
+            android:text="  Liste des résultats :  "
+            android:textColor="#0066cc"
+            android:textSize="@dimen/Titre1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -234,9 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10sp"></ListView>
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 </ScrollView>

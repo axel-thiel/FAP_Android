@@ -38,7 +38,6 @@ public class DetailAndResultCardActivity extends Activity {
         TextView textViewComment = (TextView) findViewById(R.id.detail_text_view_comment);
 
         Card UserCardChoose = (Card) bundle.get("choosedUserCard");
-
         textViewActivity.setText(UserCardChoose.getActivity());
         textViewCity.setText(UserCardChoose.getCity());
         textViewPseudo.setText(UserCardChoose.getLogin());
@@ -47,8 +46,8 @@ public class DetailAndResultCardActivity extends Activity {
         textViewComment.setText(UserCardChoose.getComment());
 
         final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards2);
-
         List<Card> associatedCards = new ArrayList<Card>();
+
         //method to fond associated cards in the sqlite bdd
         CardBDD cardBDD = BddFactory.getCardBdd(this);
         Cursor cursor = cardBDD.getCardList();
@@ -73,7 +72,7 @@ public class DetailAndResultCardActivity extends Activity {
         FicheUserAdapterSmall ficheUserAdapterSmall = new FicheUserAdapterSmall(this, R.layout.adapter_fiche_user, associatedCards);
         listAssociatedCard.setAdapter(ficheUserAdapterSmall);
         setListViewHeightBasedOnChildren(listAssociatedCard);
-        scrollView.smoothScrollTo(0,0);
+        scrollView.smoothScrollTo(0, 0);
 
         //method to isolate the information on clicked card
         listAssociatedCard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -104,8 +103,6 @@ public class DetailAndResultCardActivity extends Activity {
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null)
-            return;
 
         int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
         int totalHeight = 0;
@@ -122,5 +119,4 @@ public class DetailAndResultCardActivity extends Activity {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
     }
-
 }

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by maax on 01/09/16.
  */
-public class CardBDD extends SQLiteOpenHelper{
+public class CardBDD extends SQLiteOpenHelper {
     static final String COL_ID = "card_id";
     static final String TABLE_CARDS = "Cards_table";
     static final String LOGIN = "Login";
@@ -31,7 +31,6 @@ public class CardBDD extends SQLiteOpenHelper{
     public CardBDD(Context context, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "Cards_table", factory, DATABASE_VERSION);
         this.open();
-
     }
 
     @Override
@@ -39,20 +38,20 @@ public class CardBDD extends SQLiteOpenHelper{
         sqLiteDatabase = newDb;
         sqLiteDatabase.execSQL(createBddCards);
 
-        this.insertNewCard(new Card("Footing", "Lyon", "Damien", "Pro","damien@gmil.com", "j'aime courir"));
-        this.insertNewCard(new Card("Footing", "Bordeau", "Damien",  "Niveau faible","damien@gmil.com", "pas de commentaire"));
-        this.insertNewCard(new Card("Foot", "Lyon", "Damien", "Niveau moyen","damien@gmil.com", "dispo que le WE"));
-        this.insertNewCard(new Card("Footing", "Toulouse", "Damien", "novice","damien@gmil.com", "n'aime pas courir en ville"));
+        this.insertNewCard(new Card("Footing", "Lyon", "Damien", "Pro", "damien@gmil.com", "j'aime courir"));
+        this.insertNewCard(new Card("Footing", "Bordeau", "Damien", "Niveau faible", "damien@gmil.com", "pas de commentaire"));
+        this.insertNewCard(new Card("Foot", "Lyon", "Damien", "Niveau moyen", "damien@gmil.com", "dispo que le WE"));
+        this.insertNewCard(new Card("Footing", "Toulouse", "Damien", "novice", "damien@gmil.com", "n'aime pas courir en ville"));
 
-        this.insertNewCard(new Card("Footing", "Lyon", "Axel", "Niveau expert","axel@gmail.com", "doucement mais surement"));
-        this.insertNewCard(new Card("Footing", "Troyes", "Axel",  "bon","axel@gmail.com", "au centre ville"));
-        this.insertNewCard(new Card("Foot", "Lyon", "Axel",  "débutant","axel@gmail.com", "dispo la semaine"));
-        this.insertNewCard(new Card("Judo", "Toulouse", "Axel", "ceinture bleue","axel@gmail.com", "pas de commentaire"));
+        this.insertNewCard(new Card("Footing", "Lyon", "Axel", "Niveau expert", "axel@gmail.com", "doucement mais surement"));
+        this.insertNewCard(new Card("Footing", "Troyes", "Axel", "bon", "axel@gmail.com", "au centre ville"));
+        this.insertNewCard(new Card("Foot", "Lyon", "Axel", "débutant", "axel@gmail.com", "dispo la semaine"));
+        this.insertNewCard(new Card("Judo", "Toulouse", "Axel", "ceinture bleue", "axel@gmail.com", "pas de commentaire"));
 
-        this.insertNewCard(new Card("Footing", "Lyon", "Mélanie", "correct","melanie@gmail.com", "rien à dire"));
-        this.insertNewCard(new Card("Footing", "Dijon", "Mélanie", "bon","melanie@gmail.com", "la semaine"));
-        this.insertNewCard(new Card("Foot", "Lyon", "Mélanie", "expert","melanie@gmail.com", "en petit groupe"));
-        this.insertNewCard(new Card("Judo", "Toulouse", "Mélanie", "novice","melanie@gmail.com", "en club"));
+        this.insertNewCard(new Card("Footing", "Lyon", "Mélanie", "correct", "melanie@gmail.com", "rien à dire"));
+        this.insertNewCard(new Card("Footing", "Dijon", "Mélanie", "bon", "melanie@gmail.com", "la semaine"));
+        this.insertNewCard(new Card("Foot", "Lyon", "Mélanie", "expert", "melanie@gmail.com", "en petit groupe"));
+        this.insertNewCard(new Card("Judo", "Toulouse", "Mélanie", "novice", "melanie@gmail.com", "en club"));
     }
 
     public void open() {
@@ -72,10 +71,10 @@ public class CardBDD extends SQLiteOpenHelper{
         contentValues.put(CardBDD.LEVEL, newCard.getLevel());
         contentValues.put(CardBDD.COMMENT, newCard.getComment());
 
-        sqLiteDatabase.insert(CardBDD.TABLE_CARDS,null,contentValues);
+        sqLiteDatabase.insert(CardBDD.TABLE_CARDS, null, contentValues);
     }
 
-    public void deleteCard(String idCard){
+    public void deleteCard(String idCard) {
         sqLiteDatabase.execSQL("DELETE FROM Cards_table WHERE card_id = " + idCard);
     }
 

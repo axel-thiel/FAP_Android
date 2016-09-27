@@ -25,8 +25,7 @@ public class UserHomeActivity extends Activity {
     CardBDD cardBDD;
     ScrollView scrollView;
     ListView userCardsList;
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,18 +35,15 @@ public class UserHomeActivity extends Activity {
         cardBDD = BddFactory.getCardBdd(this);
         scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
 
-//        List<Card> sortedCardsList = DataBaseUserCard.recuperationUserCard(userLogin);
         List<Card> sortedCardsList = new ArrayList<Card>();
         Cursor cursor = cardBDD.getCardList();
 
-        while(cursor.moveToNext())
-        {
-            String c1=cursor.getString(1);
+        while (cursor.moveToNext()) {
+            String c1 = cursor.getString(1);
 
-            if(c1.equals(userLogin))
-            {
-                Card tmpCard = new Card(cursor.getString(3),cursor.getString(5),cursor.getString(1),
-                        cursor.getString(6),cursor.getString(2), cursor.getString(4));
+            if (c1.equals(userLogin)) {
+                Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+                        cursor.getString(6), cursor.getString(2), cursor.getString(4));
                 tmpCard.setCardId(cursor.getString(0));
                 sortedCardsList.add(tmpCard);
             }
@@ -58,32 +54,16 @@ public class UserHomeActivity extends Activity {
         FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_detail_fiche_user, sortedCardsList);
         userCardsList.setAdapter(ficheUserAdapter);
         setListViewHeightBasedOnChildren(userCardsList);
-        scrollView.smoothScrollTo(0,0);
-        //method to isolate the information on clicked card
-        userCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(view.getContext(), ResultCardActivity.class);
-                Card choosedUserCard = (Card) userCardsList.getItemAtPosition(i);
-                intent.putExtra("choosedUserCard", choosedUserCard);
-                intent.putExtra("userLoginString", userLogin);
-                startActivity(intent);
-            }
-        });
-
-
+        scrollView.smoothScrollTo(0, 0);
     }
 
-    public void onCreateNewCard(View view){
-
+    public void onCreateNewCard(View view) {
         UserBDD userBDD = BddFactory.getUserBdd(this);
         String userMail = new ReadSqliteUserBdd(userBDD, userLogin).getUserProfil().getMail();
-
         Intent intent = new Intent(this, CreateNewCardActivity.class);
         intent.putExtra("userLoginString", userLogin);
-        intent.putExtra("userMailString",userMail);
+        intent.putExtra("userMailString", userMail);
         startActivity(intent);
-
     }
 
     public void onDisconnect(View view) {
@@ -94,17 +74,18 @@ public class UserHomeActivity extends Activity {
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null)
+        if (listAdapter == null) {
             return;
+        }
 
         int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
         int totalHeight = 0;
         View view = null;
         for (int i = 0; i < listAdapter.getCount(); i++) {
             view = listAdapter.getView(i, view, listView);
-            if (i == 0)
+            if (i == 0) {
                 view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
-
+            }
             view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
             totalHeight += view.getMeasuredHeight();
         }
@@ -113,4 +94,9 @@ public class UserHomeActivity extends Activity {
         listView.setLayoutParams(params);
     }
 
+    public void onHomeUser(View view) {
+        Intent intent = new Intent(this, UserHomeActivity.class);
+        intent.putExtra("userLoginString", userLogin);
+        startActivity(intent);
+    }
 }

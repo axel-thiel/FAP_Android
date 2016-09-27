@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class FicheUserAdapterSmall extends ArrayAdapter {
 
-    private  List<Card> listOfActivity;
+    private List<Card> listOfActivity;
 
     public FicheUserAdapterSmall(Context context, int resource, List<Card> liste) {
         super(context, resource, liste);

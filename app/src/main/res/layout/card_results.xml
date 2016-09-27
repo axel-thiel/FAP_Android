@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
     android:id="@+id/card_detail_scroll_view"
-    >
-
-
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -21,81 +17,61 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="28dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/ic_power_settings_new_white_24dp"
-                    android:onClick="onDisconnect"
-                    android:textSize="@dimen/Titre3"
-                    android:padding="10dp"
-                    android:layout_weight="0.11" />
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_power_settings_new_blue_24dp"
+                    android:onClick="onDisconnect" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="right"
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5sp"
-                    android:layout_marginTop="5sp"
-                    android:background="@drawable/button_layout"
-                    android:onClick="onHomeUser"
-                    android:text="Liste de vos recherches"
-                    android:textSize="@dimen/Titre4" />
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/ic_home_blue_24dp"
+                    android:onClick="onHomeUser" />
 
             </LinearLayout>
-
-
-
-
-
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="40sp"
                 android:layout_marginTop="40sp"
                 android:background="@drawable/titrebackground"
                 android:gravity="left"
-                android:text="Liste des résultats :"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="@dimen/Titre1"
-                android:layout_gravity="center"
-                />
+                android:text="  Liste des résultats :  "
+                android:textColor="#0066cc"
+                android:textSize="@dimen/Titre1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:orientation="horizontal">
-
                 >
-
-
             </LinearLayout>
         </LinearLayout>
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,9 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10sp"></ListView>
 
-
         </LinearLayout>
 
-
     </LinearLayout>
+
 </ScrollView>
