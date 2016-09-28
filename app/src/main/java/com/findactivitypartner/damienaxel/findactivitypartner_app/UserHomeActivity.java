@@ -25,7 +25,7 @@ public class UserHomeActivity extends Activity {
     CardBDD cardBDD;
     ScrollView scrollView;
     ListView userCardsList;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

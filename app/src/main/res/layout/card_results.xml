@@ -21,12 +21,6 @@
                 android:layout_weight="1"
                 android:weightSum="1">
 
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/ic_power_settings_new_blue_24dp"
-                    android:onClick="onDisconnect" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -37,10 +31,10 @@
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="end"
-                    android:background="@drawable/ic_home_blue_24dp"
+                    android:background="@drawable/ic_home_white_24dp"
                     android:onClick="onHomeUser" />
 
             </LinearLayout>
@@ -60,8 +54,8 @@
                 android:layout_marginTop="40sp"
                 android:background="@drawable/titrebackground"
                 android:gravity="left"
-                android:text="  Liste des résultats :  "
-                android:textColor="#0066cc"
+                android:text="  Liste des résultats  "
+                android:textAppearance="@style/whiteBoldTextStyle"
                 android:textSize="@dimen/Titre1" />
 
             <LinearLayout

@@ -22,9 +22,9 @@
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/ic_power_settings_new_blue_24dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_power_settings_new_white_24dp"
                     android:onClick="onDisconnect"
                     android:padding="10dp" />
 
@@ -38,10 +38,10 @@
                 android:weightSum="1">
 
                 <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="end"
-                    android:background="@drawable/ic_home_blue_24dp"
+                    android:background="@drawable/ic_home_white_24dp"
                     android:onClick="onHomeUser" />
 
             </LinearLayout>
@@ -64,7 +64,7 @@
                 android:layout_marginTop="30sp"
                 android:background="@drawable/titrebackground"
                 android:text="  Liste de vos recherches  "
-                android:textColor="#0066cc"
+                android:textAppearance="@style/whiteBoldTextStyle"
                 android:textSize="@dimen/Titre1" />
 
         </LinearLayout>
@@ -78,10 +78,12 @@
             android:weightSum="1">
 
             <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_add_circle_blue_24dp"
-                android:onClick="onCreateNewCard" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_add_circle_white_24dp"
+                android:onClick="onCreateNewCard"
+                android:elevation="10dp"
+                />
 
         </LinearLayout>
 
@@ -99,7 +101,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:textSize="@dimen/Titre2" />
-
 
     </LinearLayout>
 

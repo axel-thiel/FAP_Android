@@ -3,7 +3,7 @@
     <corners android:radius="10sp"/>
     <padding  android:top="10sp"  android:bottom="10sp"
         android:left="@dimen/activity_vertical_margin"/>
-    <solid android:color="#FFFFFF"/>
+    <solid android:color="#70000000"/>
     <stroke android:color="#000000"
         android:width="2sp"
 

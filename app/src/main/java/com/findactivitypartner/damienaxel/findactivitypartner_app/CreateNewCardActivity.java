@@ -74,4 +74,10 @@ public class CreateNewCardActivity extends Activity {
         intent.putExtra("userLoginString", userLogin);
         startActivity(intent);
     }
+
+    public void onHomeUser(View view) {
+        Intent intent = new Intent(this, UserHomeActivity.class);
+        intent.putExtra("userLoginString", userLogin);
+        startActivity(intent);
+    }
 }

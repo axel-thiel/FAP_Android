@@ -46,28 +46,28 @@ public class DetailAndResultCardActivity extends Activity {
         textViewComment.setText(UserCardChoose.getComment());
 
         final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards2);
-        List<Card> associatedCards = new ArrayList<Card>();
+        final ArrayList<Card> associatedCards = (ArrayList<Card>) bundle.get("associatedCardList");
 
         //method to fond associated cards in the sqlite bdd
-        CardBDD cardBDD = BddFactory.getCardBdd(this);
-        Cursor cursor = cardBDD.getCardList();
+//        CardBDD cardBDD = BddFactory.getCardBdd(this);
+//        Cursor cursor = cardBDD.getCardList();
 
-        String activitySearched = UserCardChoose.getActivity();
-        String citySearched = UserCardChoose.getCity();
-
-        while (cursor.moveToNext()) {
-            String cursorLogin = cursor.getString(1);
-            String cursorActivity = cursor.getString(3);
-            String cursorCity = cursor.getString(5);
-
-            if (!cursorLogin.equals(userLogin) && cursorActivity.equals(activitySearched) &&
-                    cursorCity.equals(citySearched)) {
-                Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
-                        cursor.getString(6), cursor.getString(2), cursor.getString(4));
-                tmpCard.setCardId(cursor.getString(0));
-                associatedCards.add(tmpCard);
-            }
-        }
+//        String activitySearched = UserCardChoose.getActivity();
+//        String citySearched = UserCardChoose.getCity();
+//
+//        while (cursor.moveToNext()) {
+//            String cursorLogin = cursor.getString(1);
+//            String cursorActivity = cursor.getString(3);
+//            String cursorCity = cursor.getString(5);
+//
+//            if (!cursorLogin.equals(userLogin) && cursorActivity.equals(activitySearched) &&
+//                    cursorCity.equals(citySearched)) {
+//                Card tmpCard = new Card(cursor.getString(3), cursor.getString(5), cursor.getString(1),
+//                        cursor.getString(6), cursor.getString(2), cursor.getString(4));
+//                tmpCard.setCardId(cursor.getString(0));
+//                associatedCards.add(tmpCard);
+//            }
+//        }
 
         FicheUserAdapterSmall ficheUserAdapterSmall = new FicheUserAdapterSmall(this, R.layout.adapter_fiche_user, associatedCards);
         listAssociatedCard.setAdapter(ficheUserAdapterSmall);
@@ -83,6 +83,7 @@ public class DetailAndResultCardActivity extends Activity {
                 Card choosedUserCard = (Card) listAssociatedCard.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 intent.putExtra("userLoginString", userLogin);
+                intent.putExtra("associatedCardList", associatedCards);
                 startActivity(intent);
             }
 

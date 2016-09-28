@@ -12,12 +12,12 @@
 
         <Button
             android:id="@+id/button_create_new_user"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="left"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20sp"
-            android:background="@drawable/ic_person_add_blue_24dp"
+            android:background="@drawable/ic_person_add_white_24dp"
             android:onClick="onCreateNewUser" />
 
         <EditText
@@ -30,6 +30,8 @@
             android:hint="Identifiant"
             android:inputType="text"
             android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
             />
 
         <EditText
@@ -42,7 +44,10 @@
             android:background="@drawable/bordure_layout_simple"
             android:hint="mot de passe"
             android:inputType="textPassword"
-            android:textSize="@dimen/Titre2" />
+            android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
+            />
 
         <Button
             android:id="@+id/button_login"
@@ -52,8 +57,9 @@
             android:background="@drawable/button_layout"
             android:onClick="onHomeUser"
             android:text=" Connexion "
-            android:textColor="#0066cc"
-            android:textSize="@dimen/Titre4" />
+            android:textSize="@dimen/Titre2"
+            android:textAppearance="@style/whiteItalicBoldTextStyle"
+            />
 
     </LinearLayout>
 

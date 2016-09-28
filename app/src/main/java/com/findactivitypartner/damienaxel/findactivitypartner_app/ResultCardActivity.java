@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
 public class ResultCardActivity extends Activity {
     String userLogin;
     ScrollView scrollView;
+    ArrayList<Card> associatedCards = new ArrayList<Card>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class ResultCardActivity extends Activity {
         Card UserCardChoose = (Card) bundle.get("choosedUserCard");
         final ListView listAssociatedCard = (ListView) findViewById(R.id.list_view_associatedCards);
 
-        List<Card> associatedCards = new ArrayList<Card>();
         //method to fond associated cards in the sqlite bdd
         CardBDD cardBDD = BddFactory.getCardBdd(this);
         Cursor cursor = cardBDD.getCardList();
@@ -98,11 +99,11 @@ public class ResultCardActivity extends Activity {
                 Card choosedUserCard = (Card) listAssociatedCard.getItemAtPosition(i);
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 intent.putExtra("userLoginString", userLogin);
+                intent.putExtra("associatedCardList", associatedCards);
                 startActivity(intent);
             }
 
         });
-
     }
 
     public void onDisconnect(View view) {

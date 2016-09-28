@@ -16,8 +16,6 @@ public class MainActivity extends Activity {
     String userPassString;
     UserBDD userBDD;
     CardBDD cardBDD;
-    Cursor cursor1;
-    Cursor cursor2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +25,6 @@ public class MainActivity extends Activity {
         userPass = (EditText) findViewById(R.id.edit_text_password);
         userBDD = BddFactory.getUserBdd(this);
         cardBDD = BddFactory.getCardBdd(this);
-        cursor1 = userBDD.getUserList();
-        cursor2 = cardBDD.getCardList();
     }
 
     public void onHomeUser(View view) {
@@ -60,31 +56,6 @@ public class MainActivity extends Activity {
 
             if (cursor.isLast()) {
                 Toast.makeText(this, "Identifiant incorrect", Toast.LENGTH_LONG).show();
-
-                //to check all users and all cards in the log monitor
-                if (cursor1 != null && cursor1.moveToFirst()) {
-                    do {
-                        Log.d(" UserBdd / Login =",
-                                cursor1.getString(cursor1.getColumnIndex("Login")) +
-                                        ", Password =" + cursor1.getString(cursor1.getColumnIndex("Password")) +
-                                        ", Email =" + cursor1.getString(cursor1.getColumnIndex("Email")) + ""
-                        );
-                    } while (cursor1.moveToNext());
-                }
-
-                if (cursor2 != null && cursor2.moveToFirst()) {
-                    do {
-                        Log.d(" CardBdd / Login =",
-                                cursor2.getString(cursor2.getColumnIndex("Login"))
-                                        + ", Mail =" + cursor2.getString(cursor2.getColumnIndex("Mail"))
-                                        + ", Activity =" + cursor2.getString(cursor2.getColumnIndex("Activity"))
-                                        + ", City =" + cursor2.getString(cursor2.getColumnIndex("City"))
-                                        + ", Level =" + cursor2.getString(cursor2.getColumnIndex("Level"))
-                                        + ", Comment =" + cursor2.getString(cursor2.getColumnIndex("Comment"))
-                                        + ""
-                        );
-                    } while (cursor2.moveToNext());
-                }
                 break;
             }
         }

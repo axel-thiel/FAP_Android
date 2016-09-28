@@ -15,8 +15,8 @@
             android:layout_marginBottom="30sp"
             android:layout_marginTop="30sp"
             android:background="@drawable/titrebackground"
-            android:text="  Nouvel utilisateur ...  "
-            android:textColor="#0066cc"
+            android:text="  Nouvel utilisateur  "
+            android:textAppearance="@style/whiteBoldTextStyle"
             android:textSize="@dimen/Titre1"
             android:layout_gravity="center"
 
@@ -24,7 +24,7 @@
 
         <Button
             android:id="@id/button_create_new_user"
-            android:textColor="#0066cc"
+            android:textAppearance="@style/whiteItalicBoldTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -41,7 +41,10 @@
             android:layout_marginTop="20sp"
             android:background="@drawable/bordure_layout_simple"
             android:hint="Identifiant"
-            android:textSize="@dimen/Titre2"/>
+            android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
+            />
 
         <EditText
             android:id="@+id/create_new_userpassword"
@@ -51,7 +54,10 @@
             android:background="@drawable/bordure_layout_simple"
             android:hint="Mot de passe"
             android:inputType="textPassword"
-            android:textSize="@dimen/Titre2"/>
+            android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
+            />
 
         <EditText
             android:id="@+id/confirm_new_userpassword"
@@ -61,7 +67,10 @@
             android:background="@drawable/bordure_layout_simple"
             android:hint="Confirmation mot de passe"
             android:inputType="textPassword"
-            android:textSize="@dimen/Titre2"/>
+            android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
+            />
 
         <EditText
             android:id="@+id/create_new_useremail"
@@ -71,6 +80,9 @@
             android:background="@drawable/bordure_layout_simple"
             android:hint="email"
             android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
+            />
             />
 
         <EditText
@@ -81,7 +93,10 @@
             android:background="@drawable/bordure_layout_simple"
             android:hint="confirmation email"
             android:textSize="@dimen/Titre2"
+            android:textColorHint="#70EEEEEE"
+            style="@style/whiteNormalTextStyle"
             />
+
 
     </LinearLayout>
 </ScrollView>
