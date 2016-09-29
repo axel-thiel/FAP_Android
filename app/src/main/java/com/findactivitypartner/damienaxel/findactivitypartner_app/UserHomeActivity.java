@@ -4,14 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +29,7 @@ public class UserHomeActivity extends Activity {
         setContentView(R.layout.user_home);
         Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
+
         cardBDD = BddFactory.getCardBdd(this);
         scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
 
