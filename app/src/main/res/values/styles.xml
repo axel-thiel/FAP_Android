@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@drawable/sport14</item>
+        <item name="android:windowBackground">@drawable/sport22</item>
         <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
     </style>
     <style name="SpinnerItem">

@@ -1,130 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="end"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_home_white_24dp"
+        android:onClick="onHomeUser" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="1">
+                android:layout_gravity="center"
+                android:layout_marginBottom="30sp"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/titrebackground"
+                android:text="  Nouvelle recherche  "
+                android:textAppearance="@style/whiteBoldTextStyle"
+                android:textSize="@dimen/Titre1" />
 
-            </LinearLayout>
-
-            <LinearLayout
+            <Button
+                android:id="@id/button_create_new_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:weightSum="1">
+                android:layout_gravity="end"
+                android:background="@drawable/button_layout"
+                android:onClick="onCreateResearchCard"
+                android:text="Ok"
+                android:textAppearance="@style/whiteItalicBoldTextStyle"
+                android:textSize="@dimen/Titre2" />
 
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="end"
-                    android:background="@drawable/ic_home_white_24dp"
-                    android:onClick="onHomeUser" />
+            <EditText
+                android:id="@+id/new_card_login"
+                style="@style/whiteNormalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:hint="Identifiant"
+                android:textColorHint="#70EEEEEE"
+                android:textSize="@dimen/Titre2" />
 
-            </LinearLayout>
+            <EditText
+                android:id="@+id/new_card_email"
+                style="@style/whiteNormalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:hint="email"
+                android:textColorHint="#70EEEEEE"
+                android:textSize="@dimen/Titre2" />
+
+            <Spinner
+                android:id="@+id/spinner_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:textSize="@dimen/Titre2"></Spinner>
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:textSize="@dimen/Titre2"></Spinner>
+
+            <Spinner
+                android:id="@+id/spinner_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:textSize="@dimen/Titre2"></Spinner>
+
+            <EditText
+                android:id="@+id/new_card_comment"
+                style="@style/whiteNormalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/bordure_layout_simple"
+                android:hint="Comentaire"
+                android:textColorHint="#70EEEEEE"
+                android:textSize="@dimen/Titre2" />
+
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30sp"
-            android:layout_marginTop="30sp"
-            android:background="@drawable/titrebackground"
-            android:text="  Nouvelle recherche  "
-            android:textAppearance="@style/whiteBoldTextStyle"
-            android:textSize="@dimen/Titre1" />
-
-        <Button
-            android:id="@id/button_create_new_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:background="@drawable/button_layout"
-            android:onClick="onCreateResearchCard"
-            android:text="Ok"
-            android:textAppearance="@style/whiteItalicBoldTextStyle"
-            android:textSize="@dimen/Titre2"
-
-            />
-
-        <EditText
-            android:id="@+id/new_card_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:hint="Identifiant"
-            android:textSize="@dimen/Titre2"
-            android:textColorHint="#70EEEEEE"
-            style="@style/whiteNormalTextStyle"
-            />
-
-        <EditText
-            android:id="@+id/new_card_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:hint="email"
-            android:textSize="@dimen/Titre2"
-            android:textColorHint="#70EEEEEE"
-            style="@style/whiteNormalTextStyle"
-            />
-
-        <Spinner
-            android:id="@+id/spinner_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:textSize="@dimen/Titre2"
-            ></Spinner>
-
-        <Spinner
-            android:id="@+id/spinner_city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:textSize="@dimen/Titre2"
-            ></Spinner>
-
-        <Spinner
-            android:id="@+id/spinner_level"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:textSize="@dimen/Titre2"
-            ></Spinner>
-
-        <EditText
-            android:id="@+id/new_card_comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:background="@drawable/bordure_layout_simple"
-            android:hint="Comentaire"
-            android:textSize="@dimen/Titre2"
-            android:textColorHint="#70EEEEEE"
-            style="@style/whiteNormalTextStyle"
-            />
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</RelativeLayout>

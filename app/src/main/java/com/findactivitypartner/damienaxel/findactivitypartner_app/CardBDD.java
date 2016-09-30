@@ -38,6 +38,9 @@ public class CardBDD extends SQLiteOpenHelper {
         sqLiteDatabase = newDb;
         sqLiteDatabase.execSQL(createBddCards);
 
+        this.insertNewCard(new Card("test", "test", "TestUser1", "Pro", "test1@gmil.com", ""));
+        this.insertNewCard(new Card("test", "test", "TestUser2", "Pro", "test2@gmil.com", ""));
+
         this.insertNewCard(new Card("Footing", "Lyon", "Damien", "Pro", "damien@gmil.com", "j'aime courir"));
         this.insertNewCard(new Card("Footing", "Bordeau", "Damien", "Niveau faible", "damien@gmil.com", "pas de commentaire"));
         this.insertNewCard(new Card("Foot", "Lyon", "Damien", "Niveau moyen", "damien@gmil.com", "dispo que le WE"));

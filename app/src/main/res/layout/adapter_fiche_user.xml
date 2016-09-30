@@ -22,8 +22,8 @@
                 android:gravity="center"
                 android:hint="Identifiant"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-                android:textAppearance="@style/whiteBoldTextStyle"/>
+                android:textAppearance="@style/whiteBoldTextStyle"
+                android:textSize="@dimen/Titre2" />
 
         </LinearLayout>
 
@@ -40,8 +40,8 @@
                 android:layout_weight="2"
                 android:hint="Activité"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-                android:textAppearance="@style/whiteNormalTextStyle"/>
+                android:textAppearance="@style/whiteNormalTextStyle"
+                android:textSize="@dimen/Titre2" />
 
             <TextView
                 android:id="@+id/text_view_city"
@@ -51,8 +51,8 @@
                 android:layout_weight="2"
                 android:hint="Ville"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-                android:textAppearance="@style/whiteNormalTextStyle"/>
+                android:textAppearance="@style/whiteNormalTextStyle"
+                android:textSize="@dimen/Titre2" />
 
             <TextView
                 android:id="@+id/text_view_level"
@@ -62,8 +62,8 @@
                 android:layout_weight="2"
                 android:hint="Niveau"
                 android:paddingEnd="5sp"
-                android:textSize="@dimen/Titre2"
-                android:textAppearance="@style/whiteNormalTextStyle"/>
+                android:textAppearance="@style/whiteNormalTextStyle"
+                android:textSize="@dimen/Titre2" />
 
         </LinearLayout>
 

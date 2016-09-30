@@ -34,6 +34,7 @@ public class UserBDD extends SQLiteOpenHelper {
         sqLiteDatabase = newDb;
         sqLiteDatabase.execSQL(createBDD);
 
+        this.insertNewUser(new User("TestUser1", "testuser1", "axel@gmail.com"));
         this.insertNewUser(new User("Axel", "axel", "axel@gmail.com"));
         this.insertNewUser(new User("Damien", "damien", "damien@gmail.com"));
         this.insertNewUser(new User("Mélanie", "mélanie", "melanie@gmail.com"));

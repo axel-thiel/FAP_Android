@@ -1,6 +1,8 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.app.Activity;
+import android.app.AppOpsManager;
+import android.app.Application;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -78,5 +80,11 @@ public class MainActivity extends Activity {
         super.onRestart();
         userBDD.open();
         cardBDD.open();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+
     }
 }

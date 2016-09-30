@@ -100,7 +100,6 @@ public class ResultCardActivity extends Activity {
                 intent.putExtra("choosedUserCard", choosedUserCard);
                 intent.putExtra("userLoginString", userLogin);
                 intent.putExtra("associatedCardList", associatedCards);
-
                 startActivity(intent);
             }
 

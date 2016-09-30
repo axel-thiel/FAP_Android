@@ -1,11 +1,14 @@
 package com.findactivitypartner.damienaxel.findactivitypartner_app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -22,19 +25,19 @@ public class UserHomeActivity extends Activity {
     CardBDD cardBDD;
     ScrollView scrollView;
     ListView userCardsList;
+    boolean yesOrNo = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_home);
-        Bundle bundle = getIntent().getExtras();
+        final Bundle bundle = getIntent().getExtras();
         userLogin = bundle.getString("userLoginString");
-
         cardBDD = BddFactory.getCardBdd(this);
         scrollView = (ScrollView) findViewById(R.id.user_home_scroll_view);
 
-        List<Card> sortedCardsList = new ArrayList<Card>();
-        Cursor cursor = cardBDD.getCardList();
+        final List<Card> sortedCardsList = new ArrayList<Card>();
+        final Cursor cursor = cardBDD.getCardList();
 
         while (cursor.moveToNext()) {
             String c1 = cursor.getString(1);
@@ -49,10 +52,45 @@ public class UserHomeActivity extends Activity {
 
         userCardsList = (ListView) findViewById(R.id.user_card_list);
         // use custum adapter to show the list
-        FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_detail_fiche_user, sortedCardsList);
+        final FicheUserAdapter ficheUserAdapter = new FicheUserAdapter(this, R.layout.adapter_detail_fiche_user, sortedCardsList);
         userCardsList.setAdapter(ficheUserAdapter);
         setListViewHeightBasedOnChildren(userCardsList);
         scrollView.smoothScrollTo(0, 0);
+
+        userCardsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), ResultCardActivity.class);
+                Card choosedUserCard = (Card) userCardsList.getItemAtPosition(i);
+                intent.putExtra("choosedUserCard", choosedUserCard);
+                intent.putExtra("userLoginString", userLogin);
+                startActivity(intent);
+            }
+
+        });
+
+        userCardsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(final AdapterView<?> av, final View v, final int pos, final long id) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(UserHomeActivity.this);
+                builder.setMessage(" Vouler vous vraiment \n supprimer cette recherche ? ");
+                builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        yesOrNo = true;
+                        ficheUserAdapter.deleteItemOnView(v, sortedCardsList, pos);
+                        ficheUserAdapter.notifyDataSetChanged();
+                    }
+                });
+                builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        yesOrNo = false;
+                    }
+                });
+                builder.show();
+                return true;
+            }
+        });
     }
 
     public void onCreateNewCard(View view) {

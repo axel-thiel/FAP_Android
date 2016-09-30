@@ -40,33 +40,15 @@ public class FicheUserAdapter extends ArrayAdapter {
         textViewEmail.setText(listOfActivity.get(position).getMail());
         textViewComment.setText(listOfActivity.get(position).getComment());
 
-        Button deleteBtn = (Button) convertView.findViewById(R.id.deleteButon);
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CardBDD cardBDD = BddFactory.getCardBdd(getContext());
-                String IdCard = listOfActivity.get(position).getCardId();
-                cardBDD.deleteCard(IdCard);
-                listOfActivity.remove(position);
-                notifyDataSetChanged();
-
-            }
-        });
-
-        Button resultBtn = (Button) convertView.findViewById(R.id.resultButon);
-        resultBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CardBDD cardBDD = BddFactory.getCardBdd(getContext());
-                String IdCard = listOfActivity.get(position).getCardId();
-                Intent intent = new Intent(getContext(), ResultCardActivity.class);
-                Card choosedUserCard = (Card) listOfActivity.get(position);
-                intent.putExtra("choosedUserCard", choosedUserCard);
-                intent.putExtra("userLoginString", listOfActivity.get(position).getLogin());
-                getContext().startActivity(intent);
-            }
-        });
-
         return convertView;
+    }
+
+    public void deleteItemOnView(View v, List<Card> listCards, int position) {
+        CardBDD cardBDD = BddFactory.getCardBdd(getContext());
+        String IdCard = listCards.get(position).getCardId();
+        cardBDD.deleteCard(IdCard);
+        listCards.remove(position);
+        notifyDataSetChanged();
+
     }
 }

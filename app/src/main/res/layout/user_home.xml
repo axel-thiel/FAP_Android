@@ -1,107 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/user_home_scroll_view"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/titrebackground"
+        android:text="  Liste de vos recherches  "
+        android:textAppearance="@style/whiteBoldTextStyle"
+        android:textSize="@dimen/Titre1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <Button
+        android:id="@+id/home_disconnect_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_power_settings_new_white_24dp"
+        android:elevation="10dp"
+        android:onClick="onDisconnect" />
+
+    <ScrollView
+        android:id="@+id/user_home_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
 
-        <LinearLayout
+        android:layout_below="@+id/userNameTextView">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:weightSum="1">
-
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/ic_power_settings_new_white_24dp"
-                    android:onClick="onDisconnect"
-                    android:padding="10dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:weightSum="1">
-
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="end"
-                    android:background="@drawable/ic_home_white_24dp"
-                    android:onClick="onHomeUser" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/userNameTextView"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20sp"
-                android:layout_marginTop="30sp"
-                android:background="@drawable/titrebackground"
-                android:text="  Liste de vos recherches  "
-                android:textAppearance="@style/whiteBoldTextStyle"
-                android:textSize="@dimen/Titre1" />
+                android:orientation="vertical">
+
+
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/user_card_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:textSize="@dimen/Titre2" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="right"
-            android:orientation="horizontal"
-            android:weightSum="1">
+    </ScrollView>
 
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/ic_add_circle_white_24dp"
-                android:onClick="onCreateNewCard"
-                android:elevation="10dp"
-                />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        >
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <ListView
-            android:id="@+id/user_card_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:textSize="@dimen/Titre2" />
+        <Button
+            android:id="@+id/home_add_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_style"
+            android:elevation="10dp"
+            android:onClick="onCreateNewCard"
+            android:text="+"
+            android:textSize="45sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp" />
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
